@@ -1,6 +1,5 @@
-Hello! this is Lazacil (<http://ischika-afrilla-lazacil.pbp.cs.ui.ac.id/>)
-
-Siap melayani para lazy pacil 😉😎🤞
+# Hello! this is Lazacil (<http://ischika-afrilla-lazacil.pbp.cs.ui.ac.id/>)
+## Siap melayani para lazy pacil 😉😎🤞
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
