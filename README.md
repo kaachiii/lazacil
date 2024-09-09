@@ -2,7 +2,9 @@ Hello! this is Lazacil, siap melayani para lazy pacil 😉😎🤞
 
 <http://ischika-afrilla-lazacil.pbp.cs.ui.ac.id/>
 
-1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+
+1.Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 Awalnya, saya membuat folder bernama "lazacil" di direktori lokal komputer dan membuka Command Prompt (cmd) di dalam direktori tersebut untuk membuat *virtual environment*. Setelah itu, saya membuat file `requirements.txt` yang berisi daftar *dependencies* yang diperlukan. Setelah proyek Django "lazacil" dibuat, saya mengonfigurasi bagian `ALLOWED_HOSTS` di file `settings.py`, menjalankan server, dan mengakses *localhost* untuk memastikan proyek berjalan dengan baik.
 
