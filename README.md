@@ -45,6 +45,7 @@
 
 3. Jelaskan fungsi git dalam pengembangan perangkat lunak!
 
+    Fungsi git dalam pengembangan perangkat lunak sebagai berikut.
     - Pengelolaan Versi Kode
 
       Git memungkinkan *developer* melacak perubahan kode yang dibuat selama proses pengembangan. Setiap perubahan disimpan sebagai *commit* yang berisi informasi tentang apa yang diubah, oleh siapa, dan kapan. Ini membantu dalam memantau dan mengontrol evolusi perangkat lunak dari waktu ke waktu.
@@ -72,6 +73,7 @@
 
 4. Menurut Anda, dari semua framework yang ada, mengapa framework Django dijadikan permulaan pembelajaran pengembangan perangkat lunak?
 
+    Django dijadikan permulaan pembelajaran pengembangan perangkat lunak karena alasan berikut.
     - Pendekatan "Batteries Included" (Fitur Lengkap)
 
       Django menawarkan banyak fitur bawaan yang lengkap, seperti autentikasi pengguna, pengelolaan URL, ORM (Object-Relational Mapping), dan admin panel. Ini membantu pemula karena mereka tidak perlu memulai dari nol atau mencari banyak *library* tambahan. Dengan Django, mereka dapat langsung fokus pada logika aplikasi, bukan pada hal-hal teknis dasar.
