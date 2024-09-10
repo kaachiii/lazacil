@@ -40,20 +40,21 @@
 3. Jelaskan fungsi git dalam pengembangan perangkat lunak!
 
     Git adalah sistem kontrol versi terdistribusi yang sangat penting dalam pengembangan perangkat lunak. Berikut adalah beberapa fungsi utama Git dalam konteks pengembangan perangkat lunak:
-  - Pengelolaan Versi Kode
-    Git memungkinkan pengembang melacak perubahan kode yang dibuat selama proses pengembangan. Setiap perubahan disimpan sebagai *commit* yang berisi informasi tentang apa yang diubah, oleh siapa, dan kapan. Ini membantu dalam memantau dan mengontrol evolusi perangkat lunak dari waktu ke waktu.
-  - Kolaborasi Tim
-    Git memungkinkan banyak pengembang bekerja pada proyek yang sama secara bersamaan. Dengan fitur *branching* (percabangan), setiap pengembang bisa mengerjakan fitur atau perbaikan tertentu di cabang terpisah tanpa mengganggu kode utama. Setelah selesai, mereka bisa menggabungkan (*merge*) perubahan ke cabang utama (biasanya *main* atau *master*).
-  - Pemulihan dari Kesalahan
-    Karena Git mencatat setiap perubahan yang dilakukan, pengembang dapat dengan mudah mengembalikan (*revert*) kode ke versi sebelumnya jika ada kesalahan atau bug yang muncul. Ini memberikan keamanan dalam pengembangan karena kode sebelumnya tidak akan hilang.
-  - Integrasi dengan Layanan Cloud (GitHub, GitLab, Bitbucket)
-    Git memungkinkan pengembang menyimpan proyek mereka di layanan penyimpanan cloud seperti GitHub atau GitLab, yang mendukung pengembangan perangkat lunak secara kolaboratif melalui akses jarak jauh. Hal ini memudahkan tim yang tersebar di berbagai lokasi untuk berkolaborasi secara efektif.
-  - Branching dan Merging
-    Git menyediakan mekanisme untuk membuat percabangan (*branching*), di mana pengembang bisa mengerjakan fitur baru, melakukan eksperimen, atau memperbaiki bug tanpa mengganggu kode utama. Setelah selesai, percabangan tersebut dapat digabungkan (*merge*) kembali ke cabang utama dengan aman. Ini mendukung pengembangan paralel secara efisien.
-  - Manajemen Kontribusi Terbuka
-    Dalam proyek perangkat lunak *open-source*, Git sangat berguna karena memungkinkan pengembang dari seluruh dunia untuk berkontribusi. Pengembang bisa melakukan *fork* (menyalin) proyek, mengembangkan perubahan, dan mengirimkan *pull request* untuk menggabungkan kontribusi mereka ke dalam proyek asli.
-  - Dokumentasi Perubahan (Commit History)
-    Setiap perubahan kode yang dilakukan dalam Git disertai dengan pesan *commit*. Ini membentuk sejarah perubahan (*commit history*) yang memudahkan pengembang lain untuk melihat perkembangan proyek, memahami alasan perubahan tertentu, dan melacak siapa yang mengerjakan apa.
-  - Integrasi dengan CI/CD
-    Git sering diintegrasikan dengan alat Continuous Integration/Continuous Deployment (CI/CD) seperti Jenkins, Travis CI, atau GitLab CI. Ini memungkinkan otomatisasi pengujian dan *deployment* setiap kali ada perubahan kode yang digabungkan ke cabang utama.
+    - Pengelolaan Versi Kode
+      Git memungkinkan pengembang melacak perubahan kode yang dibuat selama proses pengembangan. Setiap perubahan disimpan sebagai *commit* yang berisi informasi tentang apa yang diubah, oleh siapa, dan kapan. Ini membantu dalam memantau dan mengontrol evolusi perangkat lunak dari waktu ke waktu.
+    - Kolaborasi Tim
+      Git memungkinkan banyak pengembang bekerja pada proyek yang sama secara bersamaan. Dengan fitur *branching* (percabangan), setiap pengembang bisa mengerjakan fitur atau perbaikan tertentu di cabang terpisah tanpa mengganggu kode utama. Setelah selesai, mereka bisa menggabungkan (*merge*) perubahan ke cabang utama (biasanya *main* atau *master*).
+    - Pemulihan dari Kesalahan
+      Karena Git mencatat setiap perubahan yang dilakukan, pengembang dapat dengan mudah mengembalikan (*revert*) kode ke versi sebelumnya jika ada kesalahan atau bug yang muncul. Ini memberikan keamanan dalam pengembangan karena kode sebelumnya tidak akan hilang.
+    - Integrasi dengan Layanan Cloud (GitHub, GitLab, Bitbucket)
+      Git memungkinkan pengembang menyimpan proyek mereka di layanan penyimpanan cloud seperti GitHub atau GitLab, yang mendukung pengembangan perangkat lunak secara kolaboratif melalui akses jarak jauh. Hal ini memudahkan tim yang tersebar di berbagai lokasi untuk berkolaborasi secara efektif.
+    - Branching dan Merging
+      Git menyediakan mekanisme untuk membuat percabangan (*branching*), di mana pengembang bisa mengerjakan fitur baru, melakukan eksperimen, atau memperbaiki bug tanpa mengganggu kode utama. Setelah selesai, percabangan tersebut dapat digabungkan (*merge*) kembali ke cabang utama dengan aman. Ini mendukung pengembangan paralel secara efisien.
+    - Manajemen Kontribusi Terbuka
+      Dalam proyek perangkat lunak *open-source*, Git sangat berguna karena memungkinkan pengembang dari seluruh dunia untuk berkontribusi. Pengembang bisa melakukan *fork* (menyalin) proyek, mengembangkan perubahan, dan mengirimkan *pull request* untuk menggabungkan kontribusi mereka ke dalam proyek asli.
+    - Dokumentasi Perubahan (Commit History)
+      Setiap perubahan kode yang dilakukan dalam Git disertai dengan pesan *commit*. Ini membentuk sejarah perubahan (*commit history*) yang memudahkan pengembang lain untuk melihat perkembangan proyek, memahami alasan perubahan tertentu, dan melacak siapa yang mengerjakan apa.
+    - Integrasi dengan CI/CD
+      Git sering diintegrasikan dengan alat Continuous Integration/Continuous Deployment (CI/CD) seperti Jenkins, Travis CI, atau GitLab CI. Ini memungkinkan otomatisasi pengujian dan *deployment* setiap kali ada perubahan kode yang digabungkan ke cabang utama.
+  
   Dengan fungsinya yang fleksibel dan kuat, Git menjadi alat penting dalam pengembangan perangkat lunak modern, terutama untuk tim besar dan proyek-proyek skala besar yang memerlukan pengelolaan versi yang baik.
