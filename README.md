@@ -1,5 +1,4 @@
-# Hello, Welcome to Lazacil!
-### *http://ischika-afrilla-lazacil.pbp.cs.ui.ac.id*
+# Hello! Welcome to [*Lazacil*](http://ischika-afrilla-lazacil.pbp.cs.ui.ac.id)
 ### Siap melayani para lazy pacil 😎🤞
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -57,4 +56,6 @@
     - Integrasi dengan CI/CD
       Git sering diintegrasikan dengan alat Continuous Integration/Continuous Deployment (CI/CD) seperti Jenkins, Travis CI, atau GitLab CI. Ini memungkinkan otomatisasi pengujian dan *deployment* setiap kali ada perubahan kode yang digabungkan ke cabang utama.
   
-  Dengan fungsinya yang fleksibel dan kuat, Git menjadi alat penting dalam pengembangan perangkat lunak modern, terutama untuk tim besar dan proyek-proyek skala besar yang memerlukan pengelolaan versi yang baik.
+    Dengan fungsinya yang fleksibel dan kuat, Git menjadi alat penting dalam pengembangan perangkat lunak modern, terutama untuk tim besar dan proyek-proyek skala besar yang memerlukan pengelolaan versi yang baik.
+
+4. 
