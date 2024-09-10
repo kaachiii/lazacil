@@ -45,65 +45,65 @@
 
 3. Jelaskan fungsi git dalam pengembangan perangkat lunak!
 
-  - Pengelolaan Versi Kode
+    - Pengelolaan Versi Kode
 
-    Git memungkinkan pengembang melacak perubahan kode yang dibuat selama proses pengembangan. Setiap perubahan disimpan sebagai *commit* yang berisi informasi tentang apa yang diubah, oleh siapa, dan kapan. Ini membantu dalam memantau dan mengontrol evolusi perangkat lunak dari waktu ke waktu.
-  - Kolaborasi Tim
+      Git memungkinkan pengembang melacak perubahan kode yang dibuat selama proses pengembangan. Setiap perubahan disimpan sebagai *commit* yang berisi informasi tentang apa yang diubah, oleh siapa, dan kapan. Ini membantu dalam memantau dan mengontrol evolusi perangkat lunak dari waktu ke waktu.
+    - Kolaborasi Tim
 
-    Git memungkinkan banyak pengembang bekerja pada proyek yang sama secara bersamaan. Dengan fitur *branching* (percabangan), setiap pengembang bisa mengerjakan fitur atau perbaikan tertentu di cabang terpisah tanpa mengganggu kode utama. Setelah selesai, mereka bisa menggabungkan (*merge*) perubahan ke cabang utama (biasanya *main* atau *master*).
-  - Pemulihan dari Kesalahan
+      Git memungkinkan banyak pengembang bekerja pada proyek yang sama secara bersamaan. Dengan fitur *branching* (percabangan), setiap pengembang bisa mengerjakan fitur atau perbaikan tertentu di cabang terpisah tanpa mengganggu kode utama. Setelah selesai, mereka bisa menggabungkan (*merge*) perubahan ke cabang utama (biasanya *main* atau *master*).
+    - Pemulihan dari Kesalahan
 
-    Karena Git mencatat setiap perubahan yang dilakukan, pengembang dapat dengan mudah mengembalikan (*revert*) kode ke versi sebelumnya jika ada kesalahan atau bug yang muncul. Ini memberikan keamanan dalam pengembangan karena kode sebelumnya tidak akan hilang.
-  - Integrasi dengan Layanan Cloud (GitHub, GitLab, Bitbucket)
+      Karena Git mencatat setiap perubahan yang dilakukan, pengembang dapat dengan mudah mengembalikan (*revert*) kode ke versi sebelumnya jika ada kesalahan atau bug yang muncul. Ini memberikan keamanan dalam pengembangan karena kode sebelumnya tidak akan hilang.
+    - Integrasi dengan Layanan Cloud (GitHub, GitLab, Bitbucket)
 
-    Git memungkinkan pengembang menyimpan proyek mereka di layanan penyimpanan cloud seperti GitHub atau GitLab, yang mendukung pengembangan perangkat lunak secara kolaboratif melalui akses jarak jauh. Hal ini memudahkan tim yang tersebar di berbagai lokasi untuk berkolaborasi secara efektif.
-  - Branching dan Merging
+      Git memungkinkan pengembang menyimpan proyek mereka di layanan penyimpanan cloud seperti GitHub atau GitLab, yang mendukung pengembangan perangkat lunak secara kolaboratif melalui akses jarak jauh. Hal ini memudahkan tim yang tersebar di berbagai lokasi untuk berkolaborasi secara efektif.
+    - Branching dan Merging
 
-    Git menyediakan mekanisme untuk membuat percabangan (*branching*), di mana pengembang bisa mengerjakan fitur baru, melakukan eksperimen, atau memperbaiki bug tanpa mengganggu kode utama. Setelah selesai, percabangan tersebut dapat digabungkan (*merge*) kembali ke cabang utama dengan aman. Ini mendukung pengembangan paralel secara efisien.
-  - Manajemen Kontribusi Terbuka
+      Git menyediakan mekanisme untuk membuat percabangan (*branching*), di mana pengembang bisa mengerjakan fitur baru, melakukan eksperimen, atau memperbaiki bug tanpa mengganggu kode utama. Setelah selesai, percabangan tersebut dapat digabungkan (*merge*) kembali ke cabang utama dengan aman. Ini mendukung pengembangan paralel secara efisien.
+    - Manajemen Kontribusi Terbuka
 
-    Dalam proyek perangkat lunak *open-source*, Git sangat berguna karena memungkinkan pengembang dari seluruh dunia untuk berkontribusi. Pengembang bisa melakukan *fork* (menyalin) proyek, mengembangkan perubahan, dan mengirimkan *pull request* untuk menggabungkan kontribusi mereka ke dalam proyek asli.
-  - Dokumentasi Perubahan (Commit History)
+      Dalam proyek perangkat lunak *open-source*, Git sangat berguna karena memungkinkan pengembang dari seluruh dunia untuk berkontribusi. Pengembang bisa melakukan *fork* (menyalin) proyek, mengembangkan perubahan, dan mengirimkan *pull request* untuk menggabungkan kontribusi mereka ke dalam proyek asli.
+    - Dokumentasi Perubahan (Commit History)
 
-    Setiap perubahan kode yang dilakukan dalam Git disertai dengan pesan *commit*. Ini membentuk sejarah perubahan (*commit history*) yang memudahkan pengembang lain untuk melihat perkembangan proyek, memahami alasan perubahan tertentu, dan melacak siapa yang mengerjakan apa.
-  - Integrasi dengan CI/CD
+      Setiap perubahan kode yang dilakukan dalam Git disertai dengan pesan *commit*. Ini membentuk sejarah perubahan (*commit history*) yang memudahkan pengembang lain untuk melihat perkembangan proyek, memahami alasan perubahan tertentu, dan melacak siapa yang mengerjakan apa.
+    - Integrasi dengan CI/CD
 
-    Git sering diintegrasikan dengan alat Continuous Integration/Continuous Deployment (CI/CD) seperti Jenkins, Travis CI, atau GitLab CI. Ini memungkinkan otomatisasi pengujian dan *deployment* setiap kali ada perubahan kode yang digabungkan ke cabang utama.
+      Git sering diintegrasikan dengan alat Continuous Integration/Continuous Deployment (CI/CD) seperti Jenkins, Travis CI, atau GitLab CI. Ini memungkinkan otomatisasi pengujian dan *deployment* setiap kali ada perubahan kode yang digabungkan ke cabang utama.
 
 4. Menurut Anda, dari semua framework yang ada, mengapa framework Django dijadikan permulaan pembelajaran pengembangan perangkat lunak?
 
-  - Pendekatan "Batteries Included" (Fitur Lengkap)
+    - Pendekatan "Batteries Included" (Fitur Lengkap)
 
-    Django menawarkan banyak fitur bawaan yang lengkap, seperti otentikasi pengguna, pengelolaan URL, ORM (Object-Relational Mapping), dan admin panel. Ini membantu pemula karena mereka tidak perlu memulai dari nol atau mencari banyak pustaka tambahan. Dengan Django, mereka dapat langsung fokus pada logika bisnis aplikasi, bukan pada hal-hal teknis dasar.
-  - Arsitektur yang Terstruktur (MTV Pattern)
+      Django menawarkan banyak fitur bawaan yang lengkap, seperti otentikasi pengguna, pengelolaan URL, ORM (Object-Relational Mapping), dan admin panel. Ini membantu pemula karena mereka tidak perlu memulai dari nol atau mencari banyak pustaka tambahan. Dengan Django, mereka dapat langsung fokus pada logika bisnis aplikasi, bukan pada hal-hal teknis dasar.
+    - Arsitektur yang Terstruktur (MTV Pattern)
 
-    Django mengikuti pola *Model-Template-View* (MTV), yang serupa dengan pola MVC (*Model-View-Controller*). Arsitektur ini membagi aplikasi menjadi beberapa komponen, membuatnya lebih terorganisir dan mudah dipahami. Bagi pemula, ini membantu dalam membangun fondasi yang kuat untuk memahami bagaimana aplikasi web bekerja dan bagaimana memisahkan berbagai bagian dari sebuah aplikasi (data, logika, tampilan).
-  - Dokumentasi yang Lengkap
+      Django mengikuti pola *Model-Template-View* (MTV), yang serupa dengan pola MVC (*Model-View-Controller*). Arsitektur ini membagi aplikasi menjadi beberapa komponen, membuatnya lebih terorganisir dan mudah dipahami. Bagi pemula, ini membantu dalam membangun fondasi yang kuat untuk memahami bagaimana aplikasi web bekerja dan bagaimana memisahkan berbagai bagian dari sebuah aplikasi (data, logika, tampilan).
+    - Dokumentasi yang Lengkap
 
-    Django memiliki dokumentasi yang sangat lengkap dan ramah bagi pemula. Banyak materi pembelajaran, tutorial, dan komunitas yang mendukung, yang memudahkan pemula untuk mempelajari Django dengan cepat. Dokumentasi yang baik memastikan bahwa pengembang dapat menyelesaikan masalah mereka tanpa harus bergantung pada sumber eksternal.
-  - Keamanan Tinggi
+      Django memiliki dokumentasi yang sangat lengkap dan ramah bagi pemula. Banyak materi pembelajaran, tutorial, dan komunitas yang mendukung, yang memudahkan pemula untuk mempelajari Django dengan cepat. Dokumentasi yang baik memastikan bahwa pengembang dapat menyelesaikan masalah mereka tanpa harus bergantung pada sumber eksternal.
+    - Keamanan Tinggi
 
-    Django dilengkapi dengan fitur keamanan yang canggih, seperti perlindungan terhadap serangan *SQL Injection*, *Cross-Site Scripting* (XSS), dan *Cross-Site Request Forgery* (CSRF). Bagi pemula, memulai dengan framework yang aman membantu mereka belajar praktik pengembangan aplikasi web yang baik sejak awal.
-  - Skalabilitas
+      Django dilengkapi dengan fitur keamanan yang canggih, seperti perlindungan terhadap serangan *SQL Injection*, *Cross-Site Scripting* (XSS), dan *Cross-Site Request Forgery* (CSRF). Bagi pemula, memulai dengan framework yang aman membantu mereka belajar praktik pengembangan aplikasi web yang baik sejak awal.
+    - Skalabilitas
 
-    Django tidak hanya cocok untuk proyek kecil, tetapi juga dapat digunakan untuk proyek besar. Ini memungkinkan pengembang yang baru belajar untuk membangun proyek skala kecil, tetapi tetap memberi mereka ruang untuk mengembangkan keterampilan dan proyek mereka ke tingkat yang lebih kompleks di masa depan.
-  - Dukungan untuk Proyek Cepat (Prototyping)
+      Django tidak hanya cocok untuk proyek kecil, tetapi juga dapat digunakan untuk proyek besar. Ini memungkinkan pengembang yang baru belajar untuk membangun proyek skala kecil, tetapi tetap memberi mereka ruang untuk mengembangkan keterampilan dan proyek mereka ke tingkat yang lebih kompleks di masa depan.
+    - Dukungan untuk Proyek Cepat (Prototyping)
 
-    Django memungkinkan pengembang untuk membuat aplikasi yang berfungsi dengan cepat. Dengan fitur seperti ORM, sistem templating, dan admin panel bawaan, pengembang pemula dapat membuat prototipe aplikasi dengan cepat tanpa harus menulis banyak kode dari awal.
-  - Berorientasi pada Pengalaman Nyata
+      Django memungkinkan pengembang untuk membuat aplikasi yang berfungsi dengan cepat. Dengan fitur seperti ORM, sistem templating, dan admin panel bawaan, pengembang pemula dapat membuat prototipe aplikasi dengan cepat tanpa harus menulis banyak kode dari awal.
+    - Berorientasi pada Pengalaman Nyata
 
-    Django digunakan oleh banyak perusahaan besar untuk aplikasi skala besar (seperti Instagram, Pinterest, dan Mozilla). Belajar Django memberi pemula pengalaman langsung dengan alat yang digunakan di industri, sehingga keterampilan yang mereka pelajari langsung relevan dengan pekerjaan nyata.
-  - Python sebagai Bahasa Dasar
+      Django digunakan oleh banyak perusahaan besar untuk aplikasi skala besar (seperti Instagram, Pinterest, dan Mozilla). Belajar Django memberi pemula pengalaman langsung dengan alat yang digunakan di industri, sehingga keterampilan yang mereka pelajari langsung relevan dengan pekerjaan nyata.
+    - Python sebagai Bahasa Dasar
 
-    Django dibangun menggunakan Python, yang merupakan salah satu bahasa pemrograman paling populer dan mudah dipelajari. Python dikenal karena sintaksnya yang sederhana dan bersih, yang menjadikannya pilihan ideal bagi mereka yang baru memulai pemrograman. Selain itu, popularitas Python di berbagai bidang seperti *data science* dan *machine learning* membuat Django menjadi pilihan yang menarik untuk pengembangan aplikasi web di ekosistem Python.
-  - Komunitas yang Besar
+      Django dibangun menggunakan Python, yang merupakan salah satu bahasa pemrograman paling populer dan mudah dipelajari. Python dikenal karena sintaksnya yang sederhana dan bersih, yang menjadikannya pilihan ideal bagi mereka yang baru memulai pemrograman. Selain itu, popularitas Python di berbagai bidang seperti *data science* dan *machine learning* membuat Django menjadi pilihan yang menarik untuk pengembangan aplikasi web di ekosistem Python.
+    - Komunitas yang Besar
 
-    Django memiliki komunitas yang besar dan aktif. Pengembang pemula dapat dengan mudah menemukan jawaban atas masalah mereka melalui forum, kelompok belajar, atau repositori open-source. Komunitas yang kuat memberikan dukungan tambahan di luar dokumentasi resmi.
-  - Keterampilan yang Mudah Ditransfer
+      Django memiliki komunitas yang besar dan aktif. Pengembang pemula dapat dengan mudah menemukan jawaban atas masalah mereka melalui forum, kelompok belajar, atau repositori open-source. Komunitas yang kuat memberikan dukungan tambahan di luar dokumentasi resmi.
+    - Keterampilan yang Mudah Ditransfer
 
-    Setelah mempelajari Django, konsep-konsep seperti pemisahan logika bisnis dan presentasi, manipulasi database, dan pola desain yang dipakai oleh Django bisa dengan mudah ditransfer ke framework lain atau bahkan teknologi lain di luar Python.
+      Setelah mempelajari Django, konsep-konsep seperti pemisahan logika bisnis dan presentasi, manipulasi database, dan pola desain yang dipakai oleh Django bisa dengan mudah ditransfer ke framework lain atau bahkan teknologi lain di luar Python.
 
 5. Mengapa model pada Django disebut sebagai ORM?
 
-    Model pada Django disebut sebagai ORM (Object-Relational Mapping) karena Django menggunakan teknik ORM untuk mempermudah interaksi antara objek di dalam kode Python dengan database relasional (seperti MySQL, PostgreSQL, SQLite, dll.). ORM adalah pola desain yang memungkinkan developer bekerja dengan basis data menggunakan objek dan metode dalam kode, tanpa harus menulis langsung SQL (Structured Query Language), bahasa yang biasanya digunakan untuk mengelola database relasional. Django menggunakan teknik ORM untuk menjembatani kesenjangan antara dunia objek dalam pemrograman berorientasi objek (OOP) dan tabel dalam database relasional. ORM memungkinkan developer bekerja lebih efisien dan meningkatkan produktivitas karena interaksi dengan database menjadi lebih sederhana dan intuitif.
+    Model pada Django disebut ORM (Object-Relational Mapping) karena Django menggunakan teknik ini untuk memudahkan interaksi antara objek di kode Python dan database relasional (seperti MySQL, PostgreSQL, atau SQLite). Dengan ORM, developer bisa bekerja dengan database menggunakan objek dan metode dalam kode tanpa perlu menulis SQL (Structured Query Language), bahasa yang biasa digunakan untuk mengelola database. ORM membantu menghubungkan dunia pemrograman berorientasi objek (OOP) dengan tabel di database. Ini membuat pekerjaan developer lebih efisien dan interaksi dengan database menjadi lebih mudah dan intuitif.
 
