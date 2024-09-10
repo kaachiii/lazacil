@@ -2,9 +2,9 @@
 ### *http://ischika-afrilla-lazacil.pbp.cs.ui.ac.id*
 ### Siap melayani para lazy pacil 😎🤞
 
----------------------------------------------------------------------------------------------------------------------------------------------------
-Sebuah proyek Django sederhana sebagai Tugas Mata Kuliah Pemrograman Berbasis Platform (PBP) oleh Ischika Afrilla 2306227955. Proyek ini dibuat dengan sistem operasi Windows.
----------------------------------------------------------------------------------------------------------------------------------------------------
+---
+> Sebuah proyek Django sederhana sebagai Tugas Mata Kuliah Pemrograman Berbasis Platform (PBP) oleh Ischika Afrilla 2306227955. Proyek ini dibuat dengan sistem operasi Windows.
+---
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
