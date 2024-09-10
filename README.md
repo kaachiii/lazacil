@@ -45,7 +45,7 @@
 
 3. Jelaskan fungsi git dalam pengembangan perangkat lunak!
 
-    Fungsi git dalam pengembangan perangkat lunak sebagai berikut.
+    Fungsi git dalam pengembangan perangkat lunak adalah sebagai berikut.
     - Pengelolaan Versi Kode
 
       Git memungkinkan *developer* melacak perubahan kode yang dibuat selama proses pengembangan. Setiap perubahan disimpan sebagai *commit* yang berisi informasi tentang apa yang diubah, oleh siapa, dan kapan. Ini membantu dalam memantau dan mengontrol evolusi perangkat lunak dari waktu ke waktu.
