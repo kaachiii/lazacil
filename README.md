@@ -58,4 +58,5 @@
   
     Dengan fungsinya yang fleksibel dan kuat, Git menjadi alat penting dalam pengembangan perangkat lunak modern, terutama untuk tim besar dan proyek-proyek skala besar yang memerlukan pengelolaan versi yang baik.
 
-4. 
+4. Menurut Anda, dari semua framework yang ada, mengapa framework Django dijadikan permulaan pembelajaran pengembangan perangkat lunak?
+    tttt
