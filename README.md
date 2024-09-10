@@ -1,6 +1,6 @@
 # Hello, Welcome to Lazacil!
-### *http://ischika-afrilla-lazacil.pbp.cs.ui.ac.id*  
-### Siap melayani para lazy pacil 😎🤞  
+### *http://ischika-afrilla-lazacil.pbp.cs.ui.ac.id*
+### Siap melayani para lazy pacil 😎🤞
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 > Sebuah proyek Django sederhana sebagai Tugas Mata Kuliah Pemrograman Berbasis Platform (PBP) oleh Ischika Afrilla 2306227955. Proyek ini dibuat dengan sistem operasi Windows.
@@ -21,3 +21,4 @@
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara `urls.py`, `views.py`, `models.py`, dan berkas `html`
 
     ![Diagram Alur Request dan Response di Django](images/request-response-django.png)
+    
