@@ -21,7 +21,7 @@ class mainTest(TestCase):
           name = "Product",
           price = 1000,
           description = "Dummy product",
-          quantity = 1,
-          rating = 3.0
+          location = "Depok",
+          quantity = 1
         )
         self.assertTrue(product.is_price_valid)
