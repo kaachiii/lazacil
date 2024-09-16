@@ -23,7 +23,10 @@ def create_product(request):
         form.save()
         return redirect('main:show_main')
 
-    context = {'form': form}
+    context = {'form': form,
+               'name': 'Ischika Afrilla',
+               'npm' : '2306227955',
+               'class': 'PBP F'}
     return render(request, "create_product.html", context)
 
 def show_xml(request):
