@@ -5,6 +5,11 @@
 > Sebuah proyek Django sederhana sebagai tugas mata kuliah Pemrograman Berbasis Platform (PBP) oleh Ischika Afrilla 2306227955. Proyek ini dibuat dengan sistem operasi Windows.
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Daftar Isi
+- [Tugas 2](#tugas-2)
+- [Tugas 3](#tugas-3)
+- [Dokumentasi Postman](#dokumentasi-postman)
+
 ## Tugas 2
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial).
