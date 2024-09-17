@@ -189,9 +189,9 @@
 ## Dokumentasi Postman
 ### XML
 ![Dokumentasi Postman XML](images/xml.png)
-### XML ID
+### XML by ID
 ![Dokumentasi Postman XML ID](images/xml_id.png)
 ### JSON
 ![Dokumentasi Postman JSON](images/json.png)
-### JSON ID
+### JSON by ID
 ![Dokumentasi Postman JSON ID](images/json_id.png)
