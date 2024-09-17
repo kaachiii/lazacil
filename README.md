@@ -115,7 +115,7 @@
 
 1. Jelaskan mengapa kita memerlukan *data delivery* dalam pengimplementasian sebuah platform?
 
-  *Data delivery* adalah proses pengiriman data dari satu titik ke titik lain, baik antar sistem, aplikasi, atau komponen dalam sebuah platform. *Data delivery* sangat penting dalam pengimplementasian sebuah platform karena memainkan peran kunci dalam memastikan bahwa data yang relevan dan dibutuhkan tersedia tepat waktu, akurat, dan aman bagi pengguna atau sistem lain yang terhubung dengan platform tersebut. Tanpa pengiriman data yang andal dan efisien, platform tidak akan dapat berfungsi secara optimal, mempengaruhi kualitas layanan, keamanan, serta pengalaman pengguna secara keseluruhan.
+    *Data delivery* adalah proses pengiriman data dari satu titik ke titik lain, baik antar sistem, aplikasi, atau komponen dalam sebuah platform. *Data delivery* sangat penting dalam pengimplementasian sebuah platform karena memainkan peran kunci dalam memastikan bahwa data yang relevan dan dibutuhkan tersedia tepat waktu, akurat, dan aman bagi pengguna atau sistem lain yang terhubung dengan platform tersebut. Tanpa pengiriman data yang andal dan efisien, platform tidak akan dapat berfungsi secara optimal, mempengaruhi kualitas layanan, keamanan, serta pengalaman pengguna secara keseluruhan.
 
 2. Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?
 
@@ -157,6 +157,36 @@
         - Jika aplikasi tidak memverifikasi asal permintaan dengan menggunakan csrf_token, server akan mengeksekusi permintaan tersebut karena browser mengirimkan cookie autentikasi pengguna. Hasilnya, penyerang berhasil menjalankan tindakan atas nama pengguna tanpa persetujuan mereka.
 
     - Bagaimana csrf_token Mencegah Serangan CSRF?
+
       csrf_token mencegah serangan CSRF dengan menambahkan lapisan keamanan tambahan. Setiap form di dalam aplikasi yang aman akan berisi token unik yang dihasilkan secara acak oleh server saat halaman form dimuat. Token ini juga disimpan di sesi server pengguna. Ketika pengguna mengirimkan form, server membandingkan token yang dikirimkan dari form dengan token yang disimpan di sesi pengguna. Jika tokennya cocok, permintaan dianggap valid. Jika tidak, permintaan ditolak karena dianggap berasal dari sumber yang tidak sah.
 
-   
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
+
+    - Membuat `templates/base.html` pada direktori utama (*root folder*) lazacil.
+    - Mengedit *templates* pada `lazacil/settings.py` agar `base.html` terdeteksi sebagai *template*.
+    - Menambahkan `base.html` sebagai *template* utama pada `main/templates/main.html`.
+    - Menghapus berkas basis data (`db.sqlite3`)
+    - Mengubah *primary key* menjadi UUID pada `main/models.py`.
+    - Melakukan migrasi model kembali.
+    - Membuat berkas baru dengan nama `forms.py` pada *main* untuk membuat struktur *form*.
+    - Menambahkan `import redirect` pada `main/views.py`.
+    - Membuat fungsi `create_product` dengan parameter `request` pada `main/views.py`.
+    - Mengedit fungsi `show_main` pada `main/views.py`.
+    - Meng*import* fungsi `create_product` pada `main/urls.py`.
+    - Menambahkan path URL `create_product` ke dalam `urlpatterns` pada `main/urls.py`.
+    - Membuat berkas baru dengan nama `create_product.html` pada `main/templates` dan mengedit `main.html`.
+    - Menjalankan pada *localhost* dan mencoba menambahkan beberapa produk.
+    - Menambahkan `import HttpResponse` dan `serializers` pada `main/views.py`.
+    - Membuat fungsi baru dengan nama `show_xml`, `show_json`, `show_xml_by_id`, `show_json_by_id` pada `main/views.py` lalu import fungsi tersebut ke `main/urls.py` dan menambahkan path URL-nya ke dalam `urlpatterns`.
+    - Menjalankan pada *localhost* dan mencoba mengecek hasil datanya.
+    - Mengecek pengambilan data pada Postman dan terakhir *push* kode ke GitHub dan PWS.
+
+## Dokumentasi Postman
+### XML
+![Dokumentasi Postman XML](images/xml.png)
+### XML ID
+![Dokumentasi Postman XML ID](images/xml_id.png)
+### JSON
+![Dokumentasi Postman JSON](images/json.png)
+### JSON ID
+![Dokumentasi Postman JSON ID](images/json_id.png)
