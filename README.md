@@ -9,8 +9,10 @@
 - [Tugas 2](#tugas-2)
 - [Tugas 3](#tugas-3)
 - [Dokumentasi Postman](#dokumentasi-postman)
+- [Tugas 4](#tugas-4)
 
 ## Tugas 2
+[Back](#daftar-isi)
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial).
 
@@ -117,6 +119,7 @@
     Model pada Django disebut ORM (Object-Relational Mapping) karena Django menggunakan teknik ini untuk memudahkan interaksi antara objek di kode Python dan *database* relasional (seperti MySQL, PostgreSQL, atau SQLite). Dengan ORM, developer bisa bekerja dengan database menggunakan objek dan metode dalam kode tanpa perlu menulis SQL (Structured Query Language), bahasa yang biasa digunakan untuk mengelola *database*. ORM membantu menghubungkan dunia pemrograman berorientasi objek (OOP) dengan tabel di database. Ini membuat pekerjaan *developer* lebih efisien dan interaksi dengan *database* menjadi lebih mudah dan intuitif.
 
 ## Tugas 3
+[Back](#daftar-isi)
 
 1. Jelaskan mengapa kita memerlukan *data delivery* dalam pengimplementasian sebuah platform?
 
@@ -187,6 +190,8 @@
     - Mengecek pengambilan data pada Postman dan terakhir *push* kode ke GitHub dan PWS.
 
 ## Dokumentasi Postman
+[Back](#daftar-isi)
+
 ### XML
 ![Dokumentasi Postman XML](images/xml.png)
 ### XML by ID
@@ -195,3 +200,12 @@
 ![Dokumentasi Postman JSON](images/json.png)
 ### JSON by ID
 ![Dokumentasi Postman JSON ID](images/json_id.png)
+
+## Tugas 4
+[Back](#daftar-isi)
+
+1. Apa perbedaan antara `HttpResponseRedirect()` dan `redirect()`?
+2. Jelaskan cara kerja penghubungan model `Product` dengan `User`!
+3. Apa perbedaan antara *authentication* dan *authorization*, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut!
+4. Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari *cookies* dan apakah semua *cookies* aman digunakan?
+5. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial)!
