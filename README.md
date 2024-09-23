@@ -218,17 +218,19 @@
     - Kenyamanan
       - `HttpResponseRedirect()`: Kurang praktis karena kita harus secara manual membangun URL atau mengonversi URL.
       - `redirect()`: Lebih mudah digunakan karena mengurangi kebutuhan untuk membangun URL secara manual. Django akan melakukan semua konversi jika kita ingin mengarahkan ke nama URL yang ada atau objek model.
+
     Fungsi `redirect()` lebih umum digunakan karena memberikan kemudahan dan fleksibilitas yang lebih besar.
 
 2. Jelaskan cara kerja penghubungan model `Product` dengan `User`!
 
 3. Apa perbedaan antara *authentication* dan *authorization*, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut!
 
-    Authentication (Otentikasi)
+    **Authentication (Otentikasi)**
       - Definisi: Proses memverifikasi identitas pengguna, biasanya dengan memeriksa kredensial seperti username dan password.
       - Cara Kerja: Pengguna memberikan kredensial (username dan password) yang kemudian dicocokkan dengan data yang tersimpan di database. Jika cocok, pengguna dianggap terautentikasi.
       - Tujuan: Memastikan bahwa orang yang mengakses aplikasi adalah orang yang memang berhak mengakses.
-    Authorization (Otorisasi)
+
+    **Authorization (Otorisasi)**
       - Definisi: Proses yang menentukan hak akses pengguna setelah mereka berhasil diotentikasi, seperti izin untuk mengakses fitur atau halaman tertentu.
       - Cara Kerja: Setelah identitas pengguna terverifikasi, sistem akan memeriksa peran atau izin yang dimiliki pengguna. Berdasarkan peran atau izin tersebut, sistem akan menentukan tindakan apa saja yang boleh dilakukan oleh pengguna.
       - Tujuan: Memastikan bahwa pengguna hanya dapat mengakses fitur dan data yang sesuai dengan perannya.
