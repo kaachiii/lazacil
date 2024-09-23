@@ -240,14 +240,14 @@
       - Otorisasi: Server akan memeriksa peran atau izin pengguna dan menentukan halaman atau fitur apa yang dapat diakses oleh pengguna.
       - Pengalihan: Browser akan diarahkan ke halaman yang sesuai dengan otorisasi pengguna.
 
-    Authentication di Django
+    **Authentication di Django**
 
     Django memiliki sistem otentikasi bawaan yang menyediakan berbagai fungsi dan mekanisme untuk mengelola login, logout, dan manajemen pengguna.
       - User Model: Django memiliki model pengguna default (django.contrib.auth.models.User) yang menyimpan informasi pengguna seperti username, password (terenkripsi), email, dan status.
       - Login: Fungsi login di Django (misalnya django.contrib.auth.login()) menangani proses otentikasi pengguna. Proses login memvalidasi kredensial pengguna dan membuat session yang menyimpan informasi pengguna yang sudah diotentikasi.
       - Session: Setelah pengguna berhasil login, Django menggunakan session (dikelola melalui cookies) untuk menyimpan informasi bahwa pengguna tersebut sudah diotentikasi pada request berikutnya.
 
-    Authorization di Django
+    **Authorization di Django**
 
     Authorization di Django dikontrol melalui permissions (izin) dan groups (kelompok pengguna). Django memberikan kontrol akses berbasis peran dengan menggunakan mekanisme berikut:
       - Permissions: Setiap pengguna di Django dapat diberikan izin tertentu. Django secara otomatis memberikan izin untuk add, change, delete, dan view pada model tertentu. Izin-izin ini bisa diperluas sesuai kebutuhan.
