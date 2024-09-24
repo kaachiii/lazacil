@@ -207,10 +207,10 @@
 1. Apa perbedaan antara `HttpResponseRedirect()` dan `redirect()`?
 
     - Fungsi Dasar:
-      - `HttpResponseRedirect()`: Kelas bawaan Django yang digunakan untuk mengembalikan respons pengalihan HTTP dengan status kode 302 (Found). Ini mengharuskan kita untuk secara eksplisit menyertakan URL tujuan sebagai argumen saat menggunakannya.
+      - `HttpResponseRedirect()`: Kelas bawaan Django yang digunakan untuk mengembalikan respons pengalihan HTTP dengan status kode 302 (*Found*). Ini mengharuskan kita untuk secara eksplisit menyertakan URL tujuan sebagai argumen saat menggunakannya.
       - `redirect()`: Fungsi utilitas Django yang secara internal menggunakan `HttpResponseRedirect()`, tetapi menyediakan fleksibilitas tambahan. Fungsi ini lebih cerdas karena memungkinkan kita untuk mengoper URL, nama pola URL, atau bahkan objek model, dan Django akan mengonversinya menjadi URL yang sesuai.
     - Penggunaan
-      - `HttpResponseRedirect()`: Mengharuskan URL lengkap atau relatif diberikan secara manual, biasanya digunakan untuk redirect sederhana ke URL tertentu.
+      - `HttpResponseRedirect()`: Mengharuskan URL lengkap atau relatif diberikan secara manual, biasanya digunakan untuk *redirect* sederhana ke URL tertentu.
       - `redirect()`: Lebih fleksibel dan mendukung berbagai tipe input seperti URL *string*, nama URL, atau objek.
     - Fleksibilitas
       - `HttpResponseRedirect()`: Hanya dapat digunakan untuk URL *string*, sehingga tidak bisa menggunakan nama pola URL atau objek model.
@@ -223,16 +223,16 @@
 
 2. Jelaskan cara kerja penghubungan model `Product` dengan `User`!
 
-    Untuk menghubungkan model Product dengan model User di Django, kita biasanya menggunakan relasi ForeignKey. Ini adalah cara yang umum untuk mendefinisikan hubungan *many-to-one*, di mana satu pengguna dapat memiliki banyak produk, tetapi setiap produk hanya dimiliki oleh satu pengguna. Cara kerja penghubungan model `Product` dengan `User` adalah sebagai berikut:
+    Untuk menghubungkan model `Product` dengan model `User` di Django, kita biasanya menggunakan relasi `ForeignKey`. Ini adalah cara yang umum untuk mendefinisikan hubungan *many-to-one*, di mana satu pengguna dapat memiliki banyak produk, tetapi setiap produk hanya dimiliki oleh satu pengguna. Cara kerja penghubungan model `Product` dengan `User` adalah sebagai berikut:
     - Membuat Model
 
-      Pertama, kita harus mendefinisikan model User dan Product. Django sudah menyediakan model User dalam django.contrib.auth.models sehingga kita dapat langsung menggunakannya.
+      Pertama, kita harus mendefinisikan model `User` dan `Product`. Django sudah menyediakan model `User` dalam `django.contrib.auth.models` sehingga kita dapat langsung menggunakannya.
     - Migrasi
 
-      Setelah mendefinisikan model, langkah selanjutnya adalah melakukan migrasi untuk menerapkan perubahan ke database.
+      Setelah mendefinisikan model, langkah selanjutnya adalah melakukan migrasi untuk menerapkan perubahan ke *database*.
     - Menggunakan Model
 
-      Setelah model dan migrasi selesai, kita dapat mulai menggunakan model ini dalam views.py.
+      Setelah model dan migrasi selesai, kita dapat mulai menggunakan model ini dalam `views.py`.
     - Mengambil Produk Milik Pengguna
 
       Untuk mengambil semua produk milik pengguna tertentu, kita dapat melakukannya dengan cara:
@@ -242,107 +242,109 @@
       ```
 
 
-3. Apa perbedaan antara *authentication* dan *authorization*, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut!
+3. Apa perbedaan antara *authentication* dan *authorization*, apakah yang dilakukan saat pengguna *login*? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut!
 
     **Authentication**
-      - Definisi: Proses memverifikasi identitas pengguna, biasanya dengan memeriksa kredensial seperti username dan password.
-      - Cara Kerja: Pengguna memberikan kredensial (username dan password) yang kemudian dicocokkan dengan data yang tersimpan di database. Jika cocok, pengguna dianggap terautentikasi.
+      - Definisi: Proses memverifikasi identitas pengguna, biasanya dengan memeriksa kredensial seperti *username* dan *password*.
+      - Cara Kerja: Pengguna memberikan kredensial (*username* dan *password*) yang kemudian dicocokkan dengan data yang tersimpan di *database*. Jika cocok, pengguna dianggap terautentikasi.
       - Tujuan: Memastikan bahwa orang yang mengakses aplikasi adalah orang yang memang berhak mengakses.
 
     **Authorization**
-      - Definisi: Proses yang menentukan hak akses pengguna setelah mereka berhasil diotentikasi, seperti izin untuk mengakses fitur atau halaman tertentu.
+      - Definisi: Proses yang menentukan hak akses pengguna setelah mereka berhasil diautentikasi, seperti izin untuk mengakses fitur atau halaman tertentu.
       - Cara Kerja: Setelah identitas pengguna terverifikasi, sistem akan memeriksa peran atau izin yang dimiliki pengguna. Berdasarkan peran atau izin tersebut, sistem akan menentukan tindakan apa saja yang boleh dilakukan oleh pengguna.
       - Tujuan: Memastikan bahwa pengguna hanya dapat mengakses fitur dan data yang sesuai dengan perannya.
 
     Ketika pengguna login yang dilakukan adalah:
-      - Klien mengirimkan permintaan: Browser mengirimkan permintaan ke server dengan data login pengguna.
-      - Server memverifikasi kredensial: Server menerima permintaan, mengambil data pengguna dari database, dan membandingkan dengan kredensial yang diberikan.
-      - Otentikasi berhasil: Jika cocok, server akan membuat sesi untuk pengguna tersebut dan mengirimkan cookie sesi ke browser.
-      - Otorisasi: Server akan memeriksa peran atau izin pengguna dan menentukan halaman atau fitur apa yang dapat diakses oleh pengguna.
-      - Pengalihan: Browser akan diarahkan ke halaman yang sesuai dengan otorisasi pengguna.
+      - Klien mengirimkan permintaan: Browser mengirimkan permintaan ke server dengan data *login* pengguna.
+      - Server memverifikasi kredensial: Server menerima permintaan, mengambil data pengguna dari *database*, dan membandingkan dengan kredensial yang diberikan.
+      - *Authentication* berhasil: Jika cocok, server akan membuat sesi untuk pengguna tersebut dan mengirimkan *cookie* sesi ke browser.
+      - *Authorization*: Server akan memeriksa peran atau izin pengguna dan menentukan halaman atau fitur apa yang dapat diakses oleh pengguna.
+      - Pengalihan: Browser akan diarahkan ke halaman yang sesuai dengan *authorization* pengguna.
 
     **Authentication di Django**
 
-    Django memiliki sistem otentikasi bawaan yang menyediakan berbagai fungsi dan mekanisme untuk mengelola login, logout, dan manajemen pengguna.
-      - User Model: Django memiliki model pengguna default (django.contrib.auth.models.User) yang menyimpan informasi pengguna seperti username, password (terenkripsi), email, dan status.
-      - Login: Fungsi login di Django (misalnya django.contrib.auth.login()) menangani proses otentikasi pengguna. Proses login memvalidasi kredensial pengguna dan membuat session yang menyimpan informasi pengguna yang sudah diotentikasi.
-      - Session: Setelah pengguna berhasil login, Django menggunakan session (dikelola melalui cookies) untuk menyimpan informasi bahwa pengguna tersebut sudah diotentikasi pada request berikutnya.
+    Django memiliki sistem autentikasi bawaan yang menyediakan berbagai fungsi dan mekanisme untuk mengelola *login*, *logout*, dan manajemen pengguna.
+      - *User Model*: Django memiliki model pengguna default (`django.contrib.auth.models.User`) yang menyimpan informasi pengguna seperti *username*, *password* (terenkripsi), email, dan status.
+      - *Login*: Fungsi login di Django (misalnya `django.contrib.auth.login()`) menangani proses autentikasi pengguna. Proses *login* memvalidasi kredensial pengguna dan membuat *session* yang menyimpan informasi pengguna yang sudah diautentikasi.
+      - *Session*: Setelah pengguna berhasil *login*, Django menggunakan *session* (dikelola melalui *cookies*) untuk menyimpan informasi bahwa pengguna tersebut sudah diautentikasi pada *request* berikutnya.
 
     **Authorization di Django**
 
-    Authorization di Django dikontrol melalui permissions (izin) dan groups (kelompok pengguna). Django memberikan kontrol akses berbasis peran dengan menggunakan mekanisme berikut:
-      - Permissions: Setiap pengguna di Django dapat diberikan izin tertentu. Django secara otomatis memberikan izin untuk add, change, delete, dan view pada model tertentu. Izin-izin ini bisa diperluas sesuai kebutuhan.
-      - Groups: Django mendukung manajemen pengguna berdasarkan grup. Setiap grup bisa memiliki sekumpulan izin yang kemudian bisa diberikan kepada anggota grup. Ini memudahkan pengelolaan otorisasi untuk banyak pengguna yang memiliki peran serupa. Misalnya, Anda bisa membuat grup "Admin" dengan akses penuh dan grup "Pengguna Biasa" dengan akses terbatas.
-      - Decorators: Django menyediakan decorators yang memudahkan kontrol otorisasi di level view. Beberapa yang umum digunakan adalah:
-        - @login_required: Memastikan bahwa hanya pengguna yang telah login yang bisa mengakses view tersebut.
-        - @permission_required: Memastikan pengguna memiliki izin tertentu sebelum mengakses view.
-      - Peran Pengguna: Django juga memungkinkan pengelolaan peran pengguna dengan field is_staff dan is_superuser. Contoh:
-        - is_staff: Menandai pengguna sebagai staf, yang bisa mengakses admin panel.
-        - is_superuser: Menandai pengguna sebagai administrator penuh dengan semua izin.
+    Authorization di Django dikontrol melalui *permissions* (izin) dan *groups* (kelompok pengguna). Django memberikan kontrol akses berbasis peran dengan menggunakan mekanisme berikut:
+      - *Permissions*: Setiap pengguna di Django dapat diberikan izin tertentu. Django secara otomatis memberikan izin untuk *add, change, delete,* dan *view* pada model tertentu. Izin-izin ini bisa diperluas sesuai kebutuhan.
+      - *Groups*: Django mendukung manajemen pengguna berdasarkan grup. Setiap grup bisa memiliki sekumpulan izin yang kemudian bisa diberikan kepada anggota grup. Ini memudahkan pengelolaan *authorization* untuk banyak pengguna yang memiliki peran serupa. Misalnya, kita bisa membuat grup "Admin" dengan akses penuh dan grup "Pengguna Biasa" dengan akses terbatas.
+      - *Decorators*: Django menyediakan *decorators* yang memudahkan kontrol *authorization* di level *view*. Beberapa yang umum digunakan adalah:
+        - `@login_required`: Memastikan bahwa hanya pengguna yang telah *login* yang bisa mengakses *view* tersebut.
+        - `@permission_required`: Memastikan pengguna memiliki izin tertentu sebelum mengakses *view*.
+      - Peran Pengguna: Django juga memungkinkan pengelolaan peran pengguna dengan `field is_staff` dan `is_superuser`.
 
-    Kesimpulan: Django mengimplementasikan *authentication* melalui fungsi authenticate() dan login(), sedangkan *authorization* melalui izin, grup, serta decorator seperti @login_required dan @permission_required.
+    Kesimpulan: Django mengimplementasikan *authentication* melalui fungsi `authenticate()` dan `login()`, sedangkan *authorization* melalui izin, grup, serta *decorator* seperti `@login_required` dan `@permission_required`.
 
-4. Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari *cookies* dan apakah semua *cookies* aman digunakan?
+4. Bagaimana Django mengingat pengguna yang telah *login*? Jelaskan kegunaan lain dari *cookies* dan apakah semua *cookies* aman digunakan?
 
-    Django mengingat pengguna yang telah login menggunakan session yang dihubungkan dengan cookies. Ketika seorang pengguna berhasil login, Django menciptakan sebuah session ID yang unik dan menyimpannya dalam basis data atau penyimpanan lain (seperti cache atau file), tergantung pada konfigurasi. Session ID ini kemudian disimpan di sisi pengguna dalam bentuk cookie. Cookie ini adalah cookie session yang memiliki nama standar sessionid. Setiap kali pengguna melakukan request ke server, Django membaca session ID dari cookie ini untuk mengetahui siapa yang sedang berinteraksi dengan aplikasi.
+    Django mengingat pengguna yang telah *login* menggunakan *session* yang dihubungkan dengan *cookies*. Ketika seorang pengguna berhasil *login*, Django menciptakan sebuah *session ID* yang unik dan menyimpannya dalam basis data atau penyimpanan lain (seperti *cache* atau file), tergantung pada konfigurasi. *Session ID* ini kemudian disimpan di sisi pengguna dalam bentuk *cookie*. *Cookie* ini adalah *cookie session* yang memiliki nama standar `sessionid`. Setiap kali pengguna melakukan *request* ke server, Django membaca *session ID* dari *cookie* ini untuk mengetahui siapa yang sedang berinteraksi dengan aplikasi.
 
     Kegunaan lain *cookies*:
-      - Menyimpan Preferensi Pengguna: Cookies sering digunakan untuk menyimpan preferensi pengguna seperti pengaturan bahasa, tema, atau tampilan halaman tertentu.
-      - Pelacakan Aktivitas Pengguna: Cookies digunakan untuk melacak aktivitas pengguna di sebuah situs web. Ini biasanya dilakukan oleh aplikasi analitik untuk memantau statistik penggunaan, atau oleh pengiklan untuk menargetkan iklan yang lebih sesuai dengan kebiasaan pengguna.
-      - Otentikasi dan Autorisasi: Selain session cookies, beberapa aplikasi menggunakan token-based cookies (misalnya JWT atau OAuth token) untuk otentikasi yang aman dan autorisasi pada API.
-      - Shopping Cart dan E-commerce: Dalam situs web e-commerce, cookies dapat digunakan untuk mengingat barang-barang yang ditambahkan ke keranjang belanja oleh pengguna meskipun pengguna belum login atau belum menyelesaikan transaksi.
-      - Personalisasi Konten: Cookies memungkinkan situs web menampilkan konten yang lebih relevan berdasarkan interaksi sebelumnya dengan pengguna. Contohnya adalah menampilkan rekomendasi produk berdasarkan produk yang pernah dilihat atau dibeli.
+      - Menyimpan Preferensi Pengguna
+      - Pelacakan Aktivitas Pengguna
+      - *Authentication* dan *Authorization*
+      - *Shopping Cart* di *E-commerce*
+      - Personalisasi Konten
 
-    Tidak semua cookies aman. Ada beberapa masalah keamanan yang berkaitan dengan penggunaan cookies:
-      - Cookies Dapat Diakses oleh Pihak Ketiga: Jika cookie tidak dienkripsi atau ditandai sebagai aman (menggunakan properti Secure dan HttpOnly), maka bisa saja cookie tersebut disadap oleh pihak ketiga saat pengguna mengirimkannya melalui jaringan yang tidak aman. Ini bisa memungkinkan serangan seperti session hijacking (pengambilalihan sesi) atau cross-site scripting (XSS).
-      - Cookies Dapat Disalahgunakan untuk Pelacakan: Banyak pengiklan menggunakan cookies untuk melacak perilaku pengguna di berbagai situs web, yang dapat dianggap sebagai pelanggaran privasi. Oleh karena itu, pengguna seringkali disarankan untuk menolak atau menghapus cookies pihak ketiga.
-      - Cookies Terkena Serangan Cross-Site Request Forgery (CSRF): Cookies rentan terhadap serangan CSRF, di mana penyerang dapat membuat pengguna tanpa sadar mengirimkan request berbahaya ke aplikasi yang mereka autentikasi. Oleh karena itu, aplikasi web harus menggunakan token CSRF untuk melindungi dari jenis serangan ini.
-      - Cookies yang Berumur Panjang (Persistent Cookies): Cookies yang diatur untuk bertahan lama (persistent cookies) bisa menjadi masalah jika perangkat pengguna jatuh ke tangan yang salah. Jika persistent cookies menyimpan informasi login, maka penyerang bisa memanfaatkannya untuk mendapatkan akses ke akun pengguna.
+    Tidak semua *cookies* aman. Ada beberapa masalah keamanan yang berkaitan dengan penggunaan *cookies*:
+      - *Cookies* Dapat Diakses oleh Pihak Ketiga
+      - *Cookies* Dapat Disalahgunakan untuk Pelacakan
+      - *Cookies* Terkena Serangan *Cross-Site Request Forgery* (CSRF)
+      - *Cookies* yang Berumur Panjang (*Persistent Cookies*)
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial)!
 
-    - Buka main/views.py lalu tambahkan import UserCreationForm dan messages serta fungsi.
-    - Buat berkas HTML baru dengan nama register.html pada main/templates.
-    - Buka main/urls.py dan import fungsi register dari main/views.py serta tambahkan *path url* ke dalam `urlpatterns`.
-    - Buka main/views.py lalu tambahkan import authenticate, login, dan AuthenticationForm serta fungsi login_user.
-    - Buat berkas HTML baru dengan nama login.html pada main/templates.
-    - Buka main/urls.py dan import fungsi login_user dari main/views.py serta tambahkan *path url* ke dalam `urlpatterns`.
-    - Buka main/views.py lalu tambahkan import logout serta fungsi logout_user.
-    - Buka main/templates/main.html dan tambahkan potongan kode untuk logout.
-    ```html
-    ...
-    <a href="{% url 'main:logout' %}">
-      <button>Logout</button>
-    </a>
-    ...
-    ```
-    - Buka main/urls.py dan import fungsi logout_user dari main/views.py serta tambahkan *path url* ke dalam `urlpatterns`.
-    - Buka main/views.py lalu tambahkan import login_required serta @login_required(login_url='/login') di atas fungsi show_main.
-    - Jalankan dan cek pada localhost.
-    - Buka main/views.py lalu tambahkan *import* HttpResponseRedirect, reverse, dan datetime serta cookie yang bernama last_login pada fungsi login_user, show_main, dan logout_user.
-    - Buka main/templates/main.html dan tambahkan potongan kode untuk last_login.
-    ```html
-    ...
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
-    ...
-    ```
-    - Jalankan dan cek cookie pada localhost.
-    - Buka main/models.py lalu tambahkan *import* User serta ForeignKey pada class Product.
-    - Buka main/views.py dan tambahkan kode berikut agar kita dapat menandakan kepemilikan produk serta edit fungsi show_main agar hanya menampilkan produk dan nama pengguna yang sedang login.
+    - Buka `main/views.py` lalu tambahkan *import* `UserCreationForm` dan `messages` serta fungsi `register`.
+    - Buat berkas HTML baru dengan nama `register.html` pada `main/templates`.
+    - Buka `main/urls.py` dan *import* fungsi `register` dari `main/views.py` serta tambahkan *path url* ke dalam `urlpatterns`.
+    - Buka `main/views.py` lalu tambahkan *import* `authenticate`, `login`, dan `AuthenticationForm` serta fungsi `login_user`.
+    - Buat berkas HTML baru dengan nama `login.html` pada `main/templates`.
+    - Buka `main/urls.py` dan *import* fungsi `login_user` dari `main/views.py` serta tambahkan *path url* ke dalam `urlpatterns`.
+    - Buka `main/views.py` lalu tambahkan *import* `logout` serta fungsi `logout_user`.
+    - Buka `main/templates/main.html` dan tambahkan potongan kode untuk `logout`.
+      ```html
+      ...
+      <a href="{% url 'main:logout' %}">
+        <button>Logout</button>
+      </a>
+      ...
+      ```
+    - Buka `main/urls.py` dan *import* fungsi `logout_user` dari `main/views.py` serta tambahkan *path url* ke dalam `urlpatterns`.
+    - Buka `main/views.py` lalu tambahkan *import* `login_required` serta `@login_required(login_url='/login')` di atas fungsi `show_main`.
+    - Jalankan dan cek pada *localhost*.
+    - Buka `main/views.py` lalu tambahkan *import* `HttpResponseRedirect`, `reverse`, dan `datetime` serta *cookie* yang bernama `last_login` pada fungsi `login_user`, `show_main`, dan `logout_user`.
+    - Buka `main/templates/main.html` dan tambahkan potongan kode untuk `last_login`.
+      ```html
+      ...
+      <h5>Sesi terakhir login: {{ last_login }}</h5>
+      ...
+      ```
+    - Jalankan dan cek cookie pada *localhost*.
+    - Buka `main/models.py` lalu tambahkan *import* `User` serta `ForeignKey` pada *class* `Product`.
+    - Buka `main/views.py` dan tambahkan kode berikut agar kita dapat menandakan kepemilikan produk serta ganti fungsi `show_main` agar hanya menampilkan produk dan nama pengguna yang sedang *login*.
 
-    ```python
-    def create_mood_entry(request):
-      form = MoodEntryForm(request.POST or None)
+      ```python
+      def create_product(request):
+          form = ProductForm(request.POST or None)
+          
+          if form.is_valid() and request.method == "POST":
+              mood_entry = form.save(commit=False)
+              mood_entry.user = request.user
+              mood_entry.save()
+              return redirect('main:show_main')
 
-      if form.is_valid() and request.method == "POST":
-          mood_entry = form.save(commit=False)
-          mood_entry.user = request.user
-          mood_entry.save()
-          return redirect('main:show_main')
-
-      context = {'form': form}
-      return render(request, "create_mood_entry.html", context)
-    ...
-    ```
-
-    
+          context = {'form': form}
+          return render(request, "create_product.html", context)
+      ```
+    - Pastikan sudah ada minimal 1 *user* pada *database* lalu lakukan migrasi model seperti biasa.
+    - Buka `lazacil/settings.py` lalu tambahkan *import* `os` dan ganti variabel `DEBUG` menjadi seperti kode berikut:
+      ```python
+        PRODUCTION = os.getenv("PRODUCTION", False)
+        DEBUG = not PRODUCTION
+      ```
+    - Jalankan dan cek hasil pada *localhost* lalu push ke GitHub dan PWS seperti biasa.
