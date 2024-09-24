@@ -306,7 +306,7 @@
     - Buat berkas HTML baru dengan nama `login.html` pada `main/templates`.
     - Buka `main/urls.py` dan *import* fungsi `login_user` dari `main/views.py` serta tambahkan *path url* ke dalam `urlpatterns`.
     - Buka `main/views.py` lalu tambahkan *import* `logout` serta fungsi `logout_user`.
-    - Buka `main/templates/main.html` dan tambahkan potongan kode untuk `logout`.
+    - Buka `main/templates/main.html` dan tambahkan potongan kode berikut untuk `logout`.
       ```html
       ...
       <a href="{% url 'main:logout' %}">
@@ -318,7 +318,7 @@
     - Buka `main/views.py` lalu tambahkan *import* `login_required` serta `@login_required(login_url='/login')` di atas fungsi `show_main`.
     - Jalankan dan cek pada *localhost*.
     - Buka `main/views.py` lalu tambahkan *import* `HttpResponseRedirect`, `reverse`, dan `datetime` serta *cookie* yang bernama `last_login` pada fungsi `login_user`, `show_main`, dan `logout_user`.
-    - Buka `main/templates/main.html` dan tambahkan potongan kode untuk `last_login`.
+    - Buka `main/templates/main.html` dan tambahkan potongan kode berikut untuk `last_login`.
       ```html
       ...
       <h5>Sesi terakhir login: {{ last_login }}</h5>
