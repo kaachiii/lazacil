@@ -124,4 +124,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://ischika.afrilla:Hu1ix1YAaxfcSdV9bHtJIz-tkAIDxuf7@pbp.cs.ui.ac.id/ischika.afrilla/lazacil", "https://ischika.afrilla:Hu1ix1YAaxfcSdV9bHtJIz-tkAIDxuf7@pbp.cs.ui.ac.id/ischika.afrilla/lazacil"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://ischika.afrilla:YIKfpJnluA2dg46d7yTSuIqDZWhCF8hO@pbp.cs.ui.ac.id/ischika.afrilla/lazacil", "https://ischika.afrilla:YIKfpJnluA2dg46d7yTSuIqDZWhCF8hO@pbp.cs.ui.ac.id/ischika.afrilla/lazacil"]
