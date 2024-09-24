@@ -223,14 +223,33 @@
 
 2. Jelaskan cara kerja penghubungan model `Product` dengan `User`!
 
+    Untuk menghubungkan model Product dengan model User di Django, kita biasanya menggunakan relasi ForeignKey. Ini adalah cara yang umum untuk mendefinisikan hubungan *many-to-one*, di mana satu pengguna dapat memiliki banyak produk, tetapi setiap produk hanya dimiliki oleh satu pengguna. Cara kerja penghubungan model `Product` dengan `User` adalah sebagai berikut:
+    - Membuat Model
+
+      Pertama, kita harus mendefinisikan model User dan Product. Django sudah menyediakan model User dalam django.contrib.auth.models sehingga kita dapat langsung menggunakannya.
+    - Migrasi
+
+      Setelah mendefinisikan model, langkah selanjutnya adalah melakukan migrasi untuk menerapkan perubahan ke database.
+    - Menggunakan Model
+
+      Setelah model dan migrasi selesai, kita dapat mulai menggunakan model ini dalam views.py.
+    - Mengambil Produk Milik Pengguna
+
+      Untuk mengambil semua produk milik pengguna tertentu, kita dapat melakukannya dengan cara:
+      ```python
+      def show_main(request):
+          products = Product.objects.filter(user=request.user)
+      ```
+
+
 3. Apa perbedaan antara *authentication* dan *authorization*, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut!
 
-    **Authentication (Otentikasi)**
+    **Authentication**
       - Definisi: Proses memverifikasi identitas pengguna, biasanya dengan memeriksa kredensial seperti username dan password.
       - Cara Kerja: Pengguna memberikan kredensial (username dan password) yang kemudian dicocokkan dengan data yang tersimpan di database. Jika cocok, pengguna dianggap terautentikasi.
       - Tujuan: Memastikan bahwa orang yang mengakses aplikasi adalah orang yang memang berhak mengakses.
 
-    **Authorization (Otorisasi)**
+    **Authorization**
       - Definisi: Proses yang menentukan hak akses pengguna setelah mereka berhasil diotentikasi, seperti izin untuk mengakses fitur atau halaman tertentu.
       - Cara Kerja: Setelah identitas pengguna terverifikasi, sistem akan memeriksa peran atau izin yang dimiliki pengguna. Berdasarkan peran atau izin tersebut, sistem akan menentukan tindakan apa saja yang boleh dilakukan oleh pengguna.
       - Tujuan: Memastikan bahwa pengguna hanya dapat mengakses fitur dan data yang sesuai dengan perannya.
@@ -281,3 +300,49 @@
       - Cookies yang Berumur Panjang (Persistent Cookies): Cookies yang diatur untuk bertahan lama (persistent cookies) bisa menjadi masalah jika perangkat pengguna jatuh ke tangan yang salah. Jika persistent cookies menyimpan informasi login, maka penyerang bisa memanfaatkannya untuk mendapatkan akses ke akun pengguna.
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial)!
+
+    - Buka main/views.py lalu tambahkan import UserCreationForm dan messages serta fungsi.
+    - Buat berkas HTML baru dengan nama register.html pada main/templates.
+    - Buka main/urls.py dan import fungsi register dari main/views.py serta tambahkan *path url* ke dalam `urlpatterns`.
+    - Buka main/views.py lalu tambahkan import authenticate, login, dan AuthenticationForm serta fungsi login_user.
+    - Buat berkas HTML baru dengan nama login.html pada main/templates.
+    - Buka main/urls.py dan import fungsi login_user dari main/views.py serta tambahkan *path url* ke dalam `urlpatterns`.
+    - Buka main/views.py lalu tambahkan import logout serta fungsi logout_user.
+    - Buka main/templates/main.html dan tambahkan potongan kode untuk logout.
+    ```html
+    ...
+    <a href="{% url 'main:logout' %}">
+      <button>Logout</button>
+    </a>
+    ...
+    ```
+    - Buka main/urls.py dan import fungsi logout_user dari main/views.py serta tambahkan *path url* ke dalam `urlpatterns`.
+    - Buka main/views.py lalu tambahkan import login_required serta @login_required(login_url='/login') di atas fungsi show_main.
+    - Jalankan dan cek pada localhost.
+    - Buka main/views.py lalu tambahkan *import* HttpResponseRedirect, reverse, dan datetime serta cookie yang bernama last_login pada fungsi login_user, show_main, dan logout_user.
+    - Buka main/templates/main.html dan tambahkan potongan kode untuk last_login.
+    ```html
+    ...
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+    ...
+    ```
+    - Jalankan dan cek cookie pada localhost.
+    - Buka main/models.py lalu tambahkan *import* User serta ForeignKey pada class Product.
+    - Buka main/views.py dan tambahkan kode berikut agar kita dapat menandakan kepemilikan produk serta edit fungsi show_main agar hanya menampilkan produk dan nama pengguna yang sedang login.
+
+    ```python
+    def create_mood_entry(request):
+      form = MoodEntryForm(request.POST or None)
+
+      if form.is_valid() and request.method == "POST":
+          mood_entry = form.save(commit=False)
+          mood_entry.user = request.user
+          mood_entry.save()
+          return redirect('main:show_main')
+
+      context = {'form': form}
+      return render(request, "create_mood_entry.html", context)
+    ...
+    ```
+
+    
