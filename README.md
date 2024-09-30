@@ -355,11 +355,11 @@
 
 1. Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
 
-    Dalam CSS, prioritas atau spesifisitas menentukan gaya mana yang diterapkan ketika ada beberapa aturan yang berlaku untuk elemen yang sama. Urutan prioritas pengambilan CSS selector ditentukan oleh beberapa faktor, yaitu spesifisitas, urutan deklarasi, dan penggunaan properti !important. Berikut adalah penjelasan dari faktor-faktor tersebut:
+    Urutan prioritas pengambilan CSS selector ditentukan oleh beberapa faktor, yaitu spesifisitas, urutan deklarasi, dan penggunaan properti !important. Berikut adalah penjelasan dari faktor-faktor tersebut:
 
-    - Spesifisitas (Specificity)
+    - Spesifisitas (*Specificity*)
 
-      Setiap selector CSS memiliki tingkat spesifisitas yang dihitung berdasarkan jenis-jenis selector yang digunakan. Tingkat spesifisitas dibagi menjadi empat bagian utama:
+      Tingkat spesifisitas dibagi menjadi empat bagian utama:
 
         - ID Selector (`#id`): Memiliki prioritas tinggi.
         - Class, Attribute, dan Pseudo-class Selector (`.class`, `[attribute]`, `:hover`): Memiliki prioritas sedang.
@@ -368,31 +368,31 @@
 
       Tingkat spesifisitas dihitung dalam bentuk tuple, dan angka-angka ini dibandingkan dari kiri ke kanan (ID, Class, Tag). Selector dengan spesifisitas lebih tinggi akan diutamakan.
 
-    - Urutan Deklarasi (Source Order)
+    - Urutan Deklarasi (*Source Order*)
     
       Jika dua atau lebih selector memiliki spesifisitas yang sama, maka yang berlaku adalah selector yang dideklarasikan terakhir di dalam file CSS atau yang diimpor terakhir.
 
     - Penggunaan `!important`
 
-      Aturan yang menggunakan `!important` akan mengesampingkan semua aturan lainnya, terlepas dari spesifisitasnya. Namun, jika dua aturan yang saling bertentangan sama-sama menggunakan !important, maka spesifisitas tetap akan menjadi penentu.
+      Aturan yang menggunakan `!important` akan mengesampingkan semua aturan lainnya, terlepas dari spesifisitasnya. Namun, jika dua aturan yang saling bertentangan sama-sama menggunakan `!important`, maka spesifisitas tetap akan menjadi penentu.
 
     - Inline Style
 
       Gaya yang didefinisikan langsung pada elemen HTML menggunakan atribut `style` memiliki prioritas yang sangat tinggi, mengesampingkan selector yang berada di stylesheet eksternal atau internal, kecuali ada penggunaan `!important`.
 
-    - Prioritas dari User-Agent Stylesheet
+    - Prioritas dari *User-Agent Stylesheet*
 
-      Setiap browser memiliki default stylesheet (dikenal sebagai *user-agent stylesheet*). Jika tidak ada aturan CSS yang diterapkan, aturan dari browser akan digunakan. Namun, jika ada aturan CSS yang didefinisikan oleh developer, maka ini akan mengesampingkan user-agent stylesheet.
+      Setiap browser memiliki *default stylesheet* (dikenal sebagai *user-agent stylesheet*). Jika tidak ada aturan CSS yang diterapkan, aturan dari browser akan digunakan. Namun, jika ada aturan CSS yang didefinisikan oleh *developer*, maka ini akan mengesampingkan *user-agent stylesheet*.
 
 2. Mengapa *responsive design* menjadi konsep yang penting dalam pengembangan aplikasi *web*? Berikan contoh aplikasi yang sudah dan belum menerapkan *responsive design*!
 
-    Responsive design adalah konsep desain yang bertujuan agar tampilan dan fungsi sebuah website atau aplikasi web dapat menyesuaikan secara optimal di berbagai perangkat dengan ukuran layar dan resolusi yang berbeda, seperti desktop, tablet, dan smartphone. Ini menjadi penting dalam pengembangan aplikasi web karena beberapa alasan utama, yaitu:
+    Responsive design adalah konsep desain yang bertujuan agar tampilan dan fungsi sebuah *website* dapat menyesuaikan secara optimal di berbagai perangkat dengan ukuran layar dan resolusi yang berbeda, seperti *desktop*, *tablet*, dan *smartphone*. Ini menjadi penting dalam pengembangan aplikasi *web* karena beberapa alasan utama, yaitu:
 
-    - Peningkatan Penggunaan Perangkat Mobile
-    - Pengalaman Pengguna (User Experience) yang Konsisten
-    - SEO (Search Engine Optimization)
-    - Efisiensi Pengembangan
-    - Peningkatan Konversi dan Retensi
+    - Peningkatan penggunaan perangkat *mobile*
+    - Pengalaman pengguna (*user experience*) yang konsisten
+    - SEO (*Search Engine Optimization*)
+    - Efisiensi pengembangan
+    - Peningkatan konversi dan retensi
 
     Contoh aplikasi yang sudah menerapkan *responsive design*:
     - Facebook
@@ -400,60 +400,90 @@
     - X
 
     Contoh aplikasi yang belum menerapkan *responsive design*:
-    - Situs Web Tua yang Tidak Di-update
-    - Situs Pemerintah yang Tertinggal
+    - Situs web tua yang tidak di-*update*
+    - Situs pemerintah yang tertinggal
 
-3. Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+3. Jelaskan perbedaan antara *margin*, *border*, dan *padding*, serta cara untuk mengimplementasikan ketiga hal tersebut!
 
-    - Margin
+    - **Margin**
 
-      Margin adalah ruang di luar elemen. Ini digunakan untuk memberikan jarak antara elemen satu dengan elemen lain. Margin bersifat transparan dan tidak memiliki warna atau properti visual lainnya.
+      *Margin* adalah ruang di luar elemen, digunakan untuk memberikan jarak antara satu elemen dengan elemen lain. *Margin* bersifat transparan dan tidak memiliki warna atau properti visual lainnya.
         - Fungsi: Mengatur jarak antar elemen di luar area konten dan batas elemen.
         - Properti CSS:
           - `margin-top`: Mengatur margin di bagian atas elemen.
           - `margin-right`: Mengatur margin di bagian kanan elemen.
           - `margin-bottom`: Mengatur margin di bagian bawah elemen.
           - `margin-left`: Mengatur margin di bagian kiri elemen.
-          - `margin`: Mengatur semua sisi margin sekaligus (top, right, bottom, left).
+          - `margin`: Mengatur semua sisi margin sekaligus (*top, right, bottom, left*).
 
-    - Border
+        ```css
+        div {
+        margin: 20px; /* Semua sisi memiliki margin 20px */
+        }
 
-      Border adalah garis di sekeliling elemen yang mengelilingi padding dan konten. Border terletak di antara padding dan margin, dan bisa diberi warna, ketebalan, dan gaya (seperti solid, dotted, dashed, dll.).
+        p {
+        margin: 10px 5px 15px 0; /* Top: 10px, Right: 5px, Bottom: 15px, Left: 0 */
+        }
+        ```
+
+    - **Border**
+
+      *Border* adalah garis di sekeliling elemen yang mengelilingi *padding* dan konten. *Border* terletak di antara *padding* dan *margin*, serta dapat diberi warna, ketebalan, dan gaya (seperti *solid*, *dotted*, *dashed*, dll.).
         - Fungsi: Memberikan batas visual pada elemen, yang bisa berfungsi sebagai dekorasi atau untuk memisahkan konten.
         - Properti CSS:
           - `border-width`: Mengatur ketebalan garis batas.
-          - `border-style`: Mengatur gaya garis batas (solid, dotted, dashed, dll.).
+          - `border-style`: Mengatur gaya garis batas (*solid, dotted, dashed,* dll.).
           - `border-color`: Mengatur warna garis batas.
           - `margin-left`: Mengatur margin di bagian kiri elemen.
           - `border`: Properti shorthand yang menggabungkan `border-width`, `border-style`, dan `border-color`.
 
-    - Padding
+        ```css
+        div {
+        border: 2px solid black; /* Ketebalan 2px, garis solid, warna hitam */
+        }
 
-      Padding adalah ruang di dalam elemen, antara konten elemen dan batas (border). Padding juga transparan, tetapi bisa diperluas dan memiliki warna latar belakang yang sama dengan elemen tersebut. Jika elemen memiliki latar belakang, maka latar belakang akan meluas hingga ke padding.
+        p {
+        border-top: 5px dashed red; /* Hanya border atas yang bergaya dashed dengan warna merah */
+        }
+        ```
+
+    - **Padding**
+
+      *Padding* adalah ruang di dalam elemen, antara konten elemen dan batas (*border*). *Padding* bersifat transparan, tetapi bisa diperluas dan memiliki warna latar belakang yang sama dengan elemen tersebut. Jika elemen memiliki latar belakang, maka latar belakang akan meluas hingga ke *padding*.
         - Fungsi: Memberikan ruang di dalam elemen agar konten tidak menempel langsung ke border.
         - Properti CSS:
-          - `padding-top`: Mengatur padding di bagian atas.
-          - `padding-right`: Mengatur padding di bagian kanan.
-          - `padding-bottom`: Mengatur padding di bagian bawah.
-          - `padding-left`: Mengatur padding di bagian kiri.
-          - `padding`: Mengatur semua sisi padding sekaligus (top, right, bottom, left).
+          - `padding-top`: Mengatur *padding* di bagian atas.
+          - `padding-right`: Mengatur *padding* di bagian kanan.
+          - `padding-bottom`: Mengatur *padding* di bagian bawah.
+          - `padding-left`: Mengatur *padding* di bagian kiri.
+          - `padding`: Mengatur semua sisi *padding* sekaligus (*top, right, bottom, left*).
+
+        ```css
+        div {
+        padding: 10px; /* Semua sisi memiliki padding 10px */
+        }
+
+        p {
+        padding: 5px 10px 15px 20px; /* Top: 5px, Right: 10px, Bottom: 15px, Left: 20px */
+        }   
+        ```
 
     **Cara Kerja Bersama: Model Kotak CSS (CSS Box Model)**
     
-    Ketika digabungkan, margin, border, dan padding membentuk box model yang digunakan oleh browser untuk merender elemen. Box model terdiri dari:
-      - Content: Area di mana teks, gambar, atau elemen lain ditampilkan.
-      - Padding: Ruang di antara konten dan border.
-      - Border: Garis yang mengelilingi padding dan konten.
-      - Margin: Ruang di luar border, memisahkan elemen dari elemen lain.
+    Ketika digabungkan, *margin*, *border*, dan *padding* membentuk *box model* yang digunakan oleh *browser* untuk merender elemen. *Box model* terdiri dari:
+      - *Content*: Area di mana teks, gambar, atau elemen lain ditampilkan.
+      - *Padding*: Ruang di antara konten dan border.
+      - *Border*: Garis yang mengelilingi padding dan konten.
+      - *Margin*: Ruang di luar border, memisahkan elemen dari elemen lain.
 
-4. Jelaskan konsep flexbox dan grid layout beserta kegunaannya!
+4. Jelaskan konsep *flexbox* dan *grid layout* beserta kegunaannya!
 
     **Flexbox**
 
     Flexbox adalah sistem layout satu dimensi yang digunakan untuk menyusun elemen secara fleksibel dalam satu baris (horizontal) atau satu kolom (vertikal).
 
     Properti Utama:
-      - `display: flex;`: Menerapkan Flexbox pada kontainer.
+      - `display: flex;`: Menerapkan *Flexbox* pada kontainer.
       - `flex-direction`: Menentukan arah tata letak, bisa berupa `row` (baris), `column` (kolom), `row-reverse`, atau `column-reverse`.
       - `justify-content`: Mengatur bagaimana item dalam kontainer diatur secara horizontal (misalnya: `center`, `flex-start`, `flex-end`, `space-between`, `space-around`).
       - `align-items`: Mengatur bagaimana item diatur secara vertikal (misalnya: `center`, `flex-start`, `flex-end`, `stretch`).
@@ -464,7 +494,7 @@
     Kegunaan:
       - Menyusun tombol atau menu navigasi secara horizontal atau vertikal.
       - Membuat tata letak responsif di mana elemen bisa berubah ukuran secara otomatis.
-      - Menyusun elemen-elemen kartu (cards) dengan proporsi yang dinamis.
+      - Menyusun elemen-elemen kartu (*cards*) dengan proporsi yang dinamis.
       - Mengatur tata letak elemen-elemen yang perlu disebar atau disusun dengan proporsi tertentu dalam satu arah (baris/kolom).
 
     **Grid Layout**
@@ -472,16 +502,16 @@
     Grid Layout adalah sistem tata letak dua dimensi yang memungkinkan pengaturan elemen dalam baris dan kolom. Grid memberikan kontrol yang lebih detail dan presisi dalam menyusun layout halaman, memungkinkan pengembang membuat struktur kompleks seperti tabel, galeri, atau tata letak multi-kolom dengan mudah.
 
     Properti Utama:
-      - `display: grid;`: Menerapkan Grid Layout pada kontainer.
+      - `display: grid;`: Menerapkan *Grid Layout* pada kontainer.
       - `grid-template-columns` dan `grid-template-rows`: Menentukan jumlah kolom dan baris, serta ukurannya. Contoh: `grid-template-columns: 1fr 2fr;` berarti kolom pertama mengambil 1 bagian, dan kolom kedua mengambil 2 bagian dari ruang yang tersedia.
       - `grid-gap`, `column-gap`, `row-gap`: Menentukan jarak antara baris dan kolom di dalam grid.
       - `grid-area`: Menentukan di mana item tertentu akan ditempatkan dalam grid dengan referensi pada baris dan kolom.
       - `justify-items`, `align-items`: Mengatur perataan item dalam setiap sel grid secara horizontal (`justify-items`) atau vertikal (`align-items`).
-      - `grid-auto-flow`: Menentukan cara elemen ditempatkan di grid secara otomatis, seperti dalam urutan baris atau kolom.
-      - `grid-template-areas`: Mengatur tata letak berbasis nama area, memungkinkan Anda mengidentifikasi area layout secara visual dan mudah.
+      - `grid-auto-flow`: Menentukan cara elemen ditempatkan di `grid` secara otomatis, seperti dalam urutan baris atau kolom.
+      - `grid-template-areas`: Mengatur tata letak berbasis nama area, memungkinkan kita mengidentifikasi area *layout* secara *visual* dan mudah.
 
     Kegunaan:
-      - Tata letak halaman dengan header, sidebar, konten utama, dan footer.
-      - Galeri gambar yang tersusun dalam grid.
-      - Membuat tata letak kartu (cards) dengan ukuran yang berbeda tetapi tetap terstruktur.
+      - Tata letak halaman dengan *header*, *sidebar*, konten utama, dan *footer*.
+      - Galeri gambar yang tersusun dalam `grid`.
+      - Membuat tata letak kartu (*cards*) dengan ukuran yang berbeda tetapi tetap terstruktur.
       - Menyusun tabel atau tata letak multi-kolom yang responsif.
