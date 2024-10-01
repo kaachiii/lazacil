@@ -515,3 +515,5 @@
       - Galeri gambar yang tersusun dalam `grid`.
       - Membuat tata letak kartu (*cards*) dengan ukuran yang berbeda tetapi tetap terstruktur.
       - Menyusun tabel atau tata letak multi-kolom yang responsif.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
