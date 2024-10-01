@@ -516,4 +516,90 @@
       - Membuat tata letak kartu (*cards*) dengan ukuran yang berbeda tetapi tetap terstruktur.
       - Menyusun tabel atau tata letak multi-kolom yang responsif.
 
-5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial)!
+
+    - Tambahkan tag `<meta name="viewport">` dan script berikut untuk Tailwind pada `templates/base.html` karena pada tugas ini saya memilih menggunakan Tailwind.
+
+      ```html
+      <head>
+      {% block meta %}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% endblock meta %}
+      <script src="https://cdn.tailwindcss.com">
+      </script>
+      </head>   
+      ```
+    - Buka `main/views.py` dan buat fungsi baru bernama `edit_product` yang menerima parameter `request` dan `id`.
+    - Buka `views.py` lalu tambahkan import `reverse` dan `HttpResponseRedirect`.
+    - Buat berkas baru pada `main/templates` dengan nama `edit_product.html`.
+    - Buka `main/urls.py` lalu tambahkan import fungsi `edit_product` dan path url fungsi tadi ke dalam `urlpatterns`.
+    - Buka `main/templates/main.html` lalu tambahkan kode berikut agar tombol `Edit` terlihat pada setiap baris tabel.
+
+      ```html
+      ...
+      <tr>
+        ...
+        <td>
+          <a href="{% url 'main:edit_product' product.pk %}">
+            <button>
+                Edit
+            </button>
+          </a>
+        </td>
+      </tr>
+      ...   
+      ```
+    - Jalankan dan cek hasil `edit_product` pada *localhost*.
+    - Buka `main/views.py` dan buat fungsi baru bernama `delete_product` yang menerima parameter `request` dan `id`.
+    - Buka `main/urls.py` lalu tambahkan import fungsi `delete_product` dan path url fungsi tadi ke dalam `urlpatterns`.
+    - Buka `main/templates/main.html` lalu tambahkan kode berikut agar terdapat tombol `Delete` untuk setiap produk.
+
+      ```html
+      ...
+      <tr>
+          ...
+          <td>
+              <a href="{% url 'main:edit_product' product.pk %}">
+                  <button>
+                      Edit
+                  </button>
+              </a>
+          </td>
+          <td>
+              <a href="{% url 'main:delete_product' product.pk %}">
+                  <button>
+                      Delete
+                  </button>
+              </a>
+          </td>
+      </tr>
+      ...   
+      ```
+
+    - Jalankan dan cek hasil `delete_product` pada *localhost*.
+    - Buka `templates` dan buat berkas baru dengan nama `navbar.html`.
+    - Tautkan `navbar.html` ke dalam `main.html`, `create_product.html`, `edit_product.html` dengan menggunakan tags include `{% include 'navbar.html' %}`.
+    - Tambahkan *middleware* WhiteNoise pada `settings.py` dan pastikan `STATIC_ROOT`, `STATICFILES_DIRS`, dan `STATIC_URL` di-*setting* seperti ini.
+      ```python
+      ...
+      STATIC_URL = '/static/'
+      if DEBUG:
+        STATICFILES_DIRS = [
+          BASE_DIR / 'static' # merujuk ke /static root project pada mode development
+        ]
+      else:
+        STATIC_ROOT = BASE_DIR / 'static' # merujuk ke /static root project pada mode production
+      ...   
+      ```
+    - Buat direktori baru `static/css` lalu tambahkan file bernama `global.css`.
+    - Hubungkan `global.css` ke `templates/base.html`.
+    - Styling halaman login sesuai keinginan pada `main/templates/login.html`.
+    - Styling halaman register sesuai keinginan pada `main/templates/register.html`.
+    - Buat file `card_info.html` pada `main/templates` lalu lakukan styling sesuai keinginan.
+    - Buat file `card_product.html` pada `main/templates` lalu lakukan styling sesuai keinginan.
+    - Tambahkan foto pada `static/image` yang diberi nama `sedih-banget.png` sebagai tampilan awal saat belum ada produk.
+    - Tautkan `card_info.html`, `card_product.html`, dan `sedih-banget.png` ke `main/templates/main.html`.
+    - Styling halaman create product sesuai keinginan pada `main/templates/create_mood_entry.html`.
+    - Styling halaman edit product sesuai keinginan pada `main/templates/edit_product.html`.
+    - Jalankan dan cek tampilan pada *localhost* lalu push ke GitHub dan PWS seperti biasa.
