@@ -31,3 +31,11 @@
 .form-style form button:hover {
     background-color: #db2777; /* Slightly darker pink on hover */
 }
+
+/* Add this to your global.css or any CSS file you are using */
+.bg-custom {
+    background-image: url('/static/image/bg.jpeg'); /* Adjust path as needed */
+    background-size: cover; /* This makes the image cover the whole div */
+    background-position: center; /* This centers the image */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+}
