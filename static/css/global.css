@@ -1,85 +1,33 @@
-/* Gaya Umum Form */
 .form-style form input,
 .form-style form textarea,
 .form-style form select {
     width: 100%;
-    padding: 0.75rem 1rem; /* Peningkatan padding untuk kenyamanan */
-    border: 2px solid #ff69b4; /* Ganti warna border ke pink */
-    border-radius: 0.5rem; /* Membulatkan sudut lebih halus */
-    font-size: 1rem; /* Ukuran font yang lebih baik */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Animasi transisi */
-    background-color: #fff0f5; /* Warna latar belakang lembut */
+    padding: 0.5rem;
+    border: 2px solid #ec4899; /* Darker pink border color */
+    border-radius: 0.375rem; /* Consistent border radius */
+    background-color: #fff; /* White background for consistency */
+    color: #4b5563; /* Darker gray text color for better readability */
 }
 
-/* Fokus pada Input, Textarea, dan Select */
 .form-style form input:focus,
 .form-style form textarea:focus,
 .form-style form select:focus {
     outline: none;
-    border-color: #ff1493; /* Warna border saat fokus lebih gelap */
-    box-shadow: 0 0 8px rgba(255, 20, 147, 0.5); /* Shadow lembut berwarna pink */
+    border-color: #ec4899; /* Match the border color on focus */
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.5); /* Pink shadow with opacity */
 }
 
-/* Animasi Shine yang Ditingkatkan */
-@keyframes shine {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
+/* Optional: Adding styles for button elements in the form */
+.form-style form button {
+    background-color: #ec4899; /* Dark pink background */
+    color: white; /* White text color */
+    padding: 0.5rem 1rem; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 0.375rem; /* Consistent border radius */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-.animate-shine {
-    background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.4),
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.4)
-    );
-    background-size: 200% 100%;
-    animation: shine 3s infinite;
-    border-radius: 0.5rem; /* Konsistensi dengan elemen form lainnya */
-}
-
-/* Tambahan Gaya untuk Label dan Placeholder */
-.form-style form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #ff1493; /* Warna label sesuai tema */
-}
-
-.form-style form input::placeholder,
-.form-style form textarea::placeholder,
-.form-style form select::placeholder {
-    color: #ff69b4; /* Warna placeholder sesuai tema */
-    opacity: 1; /* Pastikan warna placeholder terlihat */
-}
-
-/* Gaya Tombol Submit */
-.form-style form button[type="submit"] {
-    background-color: #ff69b4;
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 1rem;
-}
-
-.form-style form button[type="submit"]:hover {
-    background-color: #ff1493;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsif untuk Form */
-@media (max-width: 768px) {
-    .form-style form {
-        padding: 1rem;
-    }
+.form-style form button:hover {
+    background-color: #db2777; /* Slightly darker pink on hover */
 }

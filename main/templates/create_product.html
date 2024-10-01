@@ -1,19 +1,53 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}  <!-- Memuat widget_tweaks -->
+
+{% block meta %}
+<title>Create Product</title>
+{% endblock meta %}
+
 {% block content %}
 {% include 'navbar.html' %}
-<h1>Add New Product</h1>
 
-<form method="POST">
-  {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-    <tr>
-      <td></td>
-      <td>
-        <input type="submit" value="Add Product" />
-      </td>
-    </tr>
-  </table>
-</form>
+<div class="flex flex-col min-h-screen bg-pink-200 py-8"> <!-- Slightly darker pink background -->
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white shadow-lg rounded-xl p-8 max-w-xl mx-auto">
+      <h1 class="text-3xl font-bold text-center text-pink-700 mb-6">Create Product</h1> <!-- Darker pink for the heading -->
+      
+      <form method="POST" class="space-y-6">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="flex flex-col">
+            <label for="{{ field.id_for_label }}" class="mb-2 font-semibold text-pink-700"> <!-- Darker pink for labels -->
+              {{ field.label }}
+            </label>
+            <div class="relative">
+              {{ field|add_class:"block w-full px-4 py-2 border border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent" }} <!-- Darker pink for borders -->
+              {% if field.errors %}
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.335-.213 2.96-1.742 2.96H3.42c-1.53 0-2.492-1.625-1.742-2.96l5.58-9.92zM11 14a1 1 0 11-2 0 1 1 0 012 0zm-1-4a1 1 0 00-1 1v2a1 1 0 102 0v-2a1 1 0 00-1-1z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              {% endif %}
+            </div>
+            {% if field.help_text %}
+              <p class="mt-1 text-sm text-pink-600">{{ field.help_text }}</p> <!-- Slightly darker pink for help text -->
+            {% endif %}
+            {% for error in field.errors %}
+              <p class="mt-1 text-sm text-red-600">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endfor %}
+        
+        <div>
+          <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md"> <!-- Darker pink for the button -->
+            Create Product
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
