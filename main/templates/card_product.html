@@ -21,21 +21,18 @@
                 <p class="text-gray-700 font-semibold">Location: {{ product.location }}</p>
             </div>
 
-            <div>
-                <p class="text-gray-700 font-semibold mb-2">Quantity:</p>
-                <div class="relative pt-1">
-                    <div class="flex mb-2 items-center justify-between">
-                        <div>
-                            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200">
-                                {% if product.quantity > 100 %}100+{% else %}{{ product.quantity }}{% endif %}
-                            </span>
-                        </div>
-                    </div>
-                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
-                        <div 
-                            style="width: {% if product.quantity > 100 %}100%{% else %}{{ product.quantity|floatformat:0 }}%{% endif %};" 
-                            class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500">
-                        </div>
+            <div class="flex items-center mb-4">
+                <p class="text-gray-700 font-semibold mr-2">Quantity:</p>
+                <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200">
+                    {% if product.quantity > 100 %}100+{% else %}{{ product.quantity }}{% endif %}
+                </span>
+            </div>
+
+            <div class="relative pt-1">
+                <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
+                    <div 
+                        style="width: {% if product.quantity > 100 %}100%{% else %}{{ product.quantity|floatformat:0 }}%{% endif %};" 
+                        class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500">
                     </div>
                 </div>
             </div>
