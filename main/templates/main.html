@@ -17,10 +17,13 @@
   </div>
 
   <div class="px-3 mb-4">
-    <div class="flex rounded-md items-center bg-pink-600 py-2 px-4 w-fit">
-      <h1 class="text-white text-center">Last Login: {{last_login}}</h1>
+    <div class="flex rounded-md items-center bg-pink-600 py-2 px-4 w-fit transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <h1 class="text-white text-center transition-colors duration-300 hover:text-pink-200">
+            Last Login: {{ last_login }}
+        </h1>
     </div>
   </div>
+
   
   <div class="flex justify-end mb-6">
     <a href="{% url 'main:create_product' %}" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
