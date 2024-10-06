@@ -11,6 +11,7 @@
 - [Dokumentasi Postman](#dokumentasi-postman)
 - [Tugas 4](#tugas-4)
 - [Tugas 5](#tugas-5)
+- [Tugas 6](#tugas-6)
 
 ## Tugas 2
 [Back](#daftar-isi)
@@ -603,3 +604,36 @@
     - Styling halaman create product sesuai keinginan pada `main/templates/create_mood_entry.html`.
     - Styling halaman edit product sesuai keinginan pada `main/templates/edit_product.html`.
     - Jalankan dan cek tampilan pada *localhost* lalu push ke GitHub dan PWS seperti biasa.
+
+## Tugas 6
+[Back](#daftar-isi)
+
+1. Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+
+    - Interaktivitas yang Dinamis, seperti validasi form secara *real-time*, konten dinamis, notifikasi, *popup*, dan *tooltip*.
+    - Pengurangan Beban Server, karena JavaScript dijalankan pada sisi klien (*browser*) sehingga banyak proses komputasi yang dapat dilakukan tanpa harus mengirimkan permintaan berulang kali ke server.
+    - Pengembangan Aplikasi Asinkron dengan AJAX, seperti *infinite scrolling*, *auto-save*, dan *update*.
+    - Peningkatan Pengalaman Pengguna (UX), seperti animasi, transisi, *drag and drop*, dan *custom controls*.
+    - Single Page Applications (SPA) sehingga pengalaman lebih cepat, lancar, dan efisiensi *bandwidth*.
+    - Kompatibilitas *Multi-browser*.
+    - Integrasi dengan teknologi lain, seperti Web APIs, *framework*, *library*, dan *backend development*.
+    - Penggunaan Teknologi Terbaru, seperti *real-time communication* dan *progressive web apps* (PWA).
+    - Modularitas dan Pemeliharaan Kode yang Lebih Mudah.
+
+2. Jelaskan fungsi dari penggunaan `await` ketika kita menggunakan `fetch()`! Apa yang akan terjadi jika kita tidak menggunakan `await`?
+
+    Fungsi penggunaan `await` dalam konteks `fetch()` adalah untuk menunggu hasil dari operasi *asynchronous* sebelum melanjutkan eksekusi kode berikutnya. Ketika kita menggunakan `fetch()` untuk mengambil data dari server, operasi ini tidak dilakukan secara instan. Sebaliknya, ia berjalan di latar belakang (*asynchronously*) dan mengembalikan sebuah `Promise`.
+
+    Jika kita tidak menggunakan `await` pada operasi `fetch()`, maka kode akan melanjutkan eksekusi tanpa menunggu penyelesaian dari `fetch()`. Hal ini dapat menyebabkan masalah, terutama ketika kita membutuhkan hasil dari `fetch()` untuk operasi berikutnya.
+
+3. Mengapa kita perlu menggunakan decorator `csrf_exempt` pada view yang akan digunakan untuk AJAX `POST`?
+
+    Penggunaan `csrf_exempt` pada view yang digunakan untuk AJAX `POST` menonaktifkan perlindungan CSRF. Django secara default mengharuskan token CSRF untuk mencegah serangan CSRF (*Cross-Site Request Forgery*), di mana penyerang bisa memanfaatkan sesi pengguna untuk melakukan tindakan yang tidak sah.
+
+    Namun, pada beberapa kasus, seperti ketika kita membuat API atau AJAX yang diakses tanpa token CSRF, kita menggunakan csrf_exempt untuk mencegah kegagalan validasi token CSRF.
+
+4. Pada tutorial PBP minggu ini, pembersihan data *input* pengguna dilakukan di belakang (*backend*) juga. Mengapa hal tersebut tidak dilakukan di *frontend* saja?
+
+    Pembersihan data di *backend* penting karena **keamanan** dan **keandalan**. Validasi di *frontend* bisa diabaikan atau dimodifikasi oleh pengguna, sedangkan *backend* selalu menjalankan validasi dengan benar, melindungi dari input berbahaya dan memastikan data yang diterima aman dan valid.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial)!
