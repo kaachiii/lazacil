@@ -637,3 +637,51 @@
     Pembersihan data di *backend* penting karena **keamanan** dan **keandalan**. Validasi di *frontend* bisa diabaikan atau dimodifikasi oleh pengguna, sedangkan *backend* selalu menjalankan validasi dengan benar, melindungi dari input berbahaya dan memastikan data yang diterima aman dan valid.
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step* (bukan hanya sekadar mengikuti tutorial)!
+
+    - Menambahkan *error message* pada fungsi `login_user` `main/views.py`.
+    - Menambahkan impor `csrf_exempt` dan `require_POST` pada `main/views.py`.
+    - Buat fungsi baru dengan nama `add_product_ajax` pada `main/views.py`.
+    - Buka `main/urls.py` lalu impor fungsi `add_product_ajax` dari `main/views.py` dan tambahkan *path url* fungsi `add_product_ajax` ke `urlpatterns`.
+    - Buka `main/views.py` lalu hapus dua baris berikut.
+
+      ```python
+      products = Product.objects.filter(user=request.user)
+      'products': products,
+      ```
+    - Buka `main/views.py` lalu ubah baris pertama *views* untuk `show_json` dan `show_xml` menjadi seperti berikut.
+
+      ```python
+      data = Product.objects.filter(user=request.user)
+      ```
+    - Buka `main/templates/main.html` lalu hapus bagian *block conditional* products untuk menampilkan `card_product` dan tambahkan potongan kode berikut di tempat yang sama.
+    
+      ```html
+      <!-- Kartu Produk -->
+      <div id="product_cards" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+      ```
+    - Buat fungsi baru dengan nama `getProduct` dan `refreshProduct` di dalam block `<script></script>` `main/templates/main.html`.
+    - Implementasikan modal (Tailwind) di bawah `<div id="product_cards">` `main/templates/main.html`.
+    - Buat fungsi baru dengan nama `showModal` dan `hideModal` di dalam block `<script></script>` `main/templates/main.html`.
+    - Tambahkan tombol 'Add New Product by AJAX' di bawah tombol `Add New Product` `main/templates/main.html`.
+    - Buat fungsi baru dengan nama `addProduct` dan sebuah *event listener* untuk menjalankan fungsi `addProduct` di dalam block `<script></script>` `main/templates/main.html`.
+    - Menambahkan impor `strip_tags` di `main/views.py` dan `main/forms.py`.
+    - Ubah `name` dan `description` fungsi `add_product_ajax` `main/views.py` menjadi seperti berikut.
+
+    ```python
+    name = strip_tags(request.POST.get("name"))
+    description = strip_tags(request.POST.get("description"))
+    ```
+  - Tambahkan fungsi `clean_name` dan `clean_description` pada `main/forms.py`.
+  - Tambahkan potongan kode berikut pada `main/templates/main.html`.
+
+    ```html
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+    ```
+  - Tambahkan potongan kode berikut pada fungsi `refreshProduct` `main/templates/main.html`.
+
+    ```javascript
+    const name = DOMPurify.sanitize(item.fields.name);
+    const description = DOMPurify.sanitize(item.fields.description);
+    ```
+  - Jalankan dan cek hasil pada *localhost* lalu push ke GitHub dan PWS seperti biasa.
+
