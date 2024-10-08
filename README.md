@@ -667,21 +667,21 @@
     - Menambahkan impor `strip_tags` di `main/views.py` dan `main/forms.py`.
     - Ubah `name` dan `description` fungsi `add_product_ajax` `main/views.py` menjadi seperti berikut.
 
-    ```python
-    name = strip_tags(request.POST.get("name"))
-    description = strip_tags(request.POST.get("description"))
-    ```
-  - Tambahkan fungsi `clean_name` dan `clean_description` pada `main/forms.py`.
-  - Tambahkan potongan kode berikut pada `main/templates/main.html`.
+      ```python
+      name = strip_tags(request.POST.get("name"))
+      description = strip_tags(request.POST.get("description"))
+      ```
+    - Tambahkan fungsi `clean_name` dan `clean_description` pada `main/forms.py`.
+    - Tambahkan potongan kode berikut pada `main/templates/main.html`.
 
-    ```html
-    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
-    ```
-  - Tambahkan potongan kode berikut pada fungsi `refreshProduct` `main/templates/main.html`.
+      ```html
+      <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+      ```
+    - Tambahkan potongan kode berikut pada fungsi `refreshProduct` `main/templates/main.html`.
 
-    ```javascript
-    const name = DOMPurify.sanitize(item.fields.name);
-    const description = DOMPurify.sanitize(item.fields.description);
-    ```
-  - Jalankan dan cek hasil pada *localhost* lalu push ke GitHub dan PWS seperti biasa.
+      ```javascript
+      const name = DOMPurify.sanitize(item.fields.name);
+      const description = DOMPurify.sanitize(item.fields.description);
+      ```
+    - Jalankan dan cek hasil pada *localhost* lalu push ke GitHub dan PWS seperti biasa.
 
