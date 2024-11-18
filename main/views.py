@@ -34,9 +34,9 @@ def create_product(request):
     form = ProductForm(request.POST or None)
     
     if form.is_valid() and request.method == "POST":
-        mood_entry = form.save(commit=False)
-        mood_entry.user = request.user
-        mood_entry.save()
+        product = form.save(commit=False)
+        product.user = request.user
+        product.save()
         return redirect('main:show_main')
 
     context = {'form': form}
@@ -108,9 +108,9 @@ def edit_product(request, id):
     return render(request, "edit_product.html", context)
 
 def delete_product(request, id):
-    # Get mood berdasarkan id
+    # Get produk berdasarkan id
     product = Product.objects.get(pk = id)
-    # Hapus mood
+    # Hapus produk
     product.delete()
     # Kembali ke halaman awal
     return HttpResponseRedirect(reverse('main:show_main'))
@@ -142,7 +142,7 @@ def create_product_flutter(request):
     if request.method == 'POST':
 
         data = json.loads(request.body)
-        new_mood = Product.objects.create(
+        new_product = Product.objects.create(
             user=request.user,
             name=data["name"],
             price=int(data["price"]),
@@ -151,7 +151,7 @@ def create_product_flutter(request):
             quantity=int(data["quantity"]),
         )
 
-        new_mood.save()
+        new_product.save()
 
         return JsonResponse({"status": "success"}, status=200)
     else:
